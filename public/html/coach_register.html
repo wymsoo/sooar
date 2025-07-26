@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Coach Registration</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            width: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="newnav"></div>
+    <div class="sep-bar-10"></div>
+    <div class="sep-bar-10"></div>
+    <div class="sep-bar-10"></div>
+
+    <div class="main-container">
+        <div class="form-container">
+            <h2>導師註冊</h2>
+
+                <div class="form-group">
+                    <label for="full-name">全名</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="nick-name">暱稱</label>
+                    <input type="text" id="nick-name" name="nick-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">聯絡電話號碼</label>
+                    <input type="text" id="phone-number" name="phone-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">電郵</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="sports-expertise">運動專業</label>
+                    <input type="text" id="sports-expertise" name="sports-expertise" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">登入名稱</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">確認密碼</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="main-container">
+                    <button class="mybtn" type="submit" onclick="registerCoach()">註冊</button>
+                </div>
+
+        </div>
+    </div>
+
+    <script>
+        function registerCoach() {
+            const pw = $('#password').val()
+            const confirmpw = $('#confirm-password').val()
+            if (!(pw==confirmpw)){
+                alert('Please reconfirm your password.')
+                $('#password').val('');
+                $('#confirm-password').val('');
+                return;
+            }
+            const data = {
+               fullname: $('#full-name').val(),
+                nickname: $('#nick-name').val(),
+                phone: $('#phone-number').val(),
+                email: $('#email').val(),
+                sport: $('#sports-expertise').val(),
+                username: $('#username').val(),
+                password: pw
+            }
+
+            fetch('/auth/registerCoach',{
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then(res=>res.json()).then((data)=>{
+                if (data.success){
+                    alert(data.message)
+                    window.location.href = "/html/login.html";
+                } else {
+                    alert(data.message)
+                    window.location.href = "/html/login.html";
+                }
+            }).catch(e=>console.error(e))
+        };
+
+    </script>
+
+
+    <script src="/js/new_navbar.js"></script>
+    <script src="../js/btnstyles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+</body>
+</body>
+
+</html>

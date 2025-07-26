@@ -1,0 +1,110 @@
+{
+  "minniesoo": {
+    "fullname": "Minnie Soo",
+    "nickname": "Minnie",
+    "phone": "63451108",
+    "email": "mini.minniesoo@gmail.com",
+    "sport": "table tennis",
+    "username": "minniesoo",
+    "password": "1234",
+    "meetingslots": {
+      "2025": {
+        "January": {},
+        "February": {},
+        "March": {},
+        "April": {},
+        "May": {},
+        "June": {},
+        "July": {
+          "8-09:00": {
+            "start": "09:00",
+            "end": "12:00"
+          },
+          "15-09:00": {
+            "start": "09:00",
+            "end": "12:00"
+          },
+          "29-09:00": {
+            "start": "09:00",
+            "end": "12:00"
+          },
+          "31-09:00": {
+            "start": "09:00",
+            "end": "12:00"
+          },
+          "8-15:00": {
+            "start": "15:00",
+            "end": "17:00"
+          }
+        },
+        "August": {
+          "14-15:00": {
+            "start": "15:00",
+            "end": "17:00"
+          }
+        },
+        "September": {},
+        "October": {},
+        "November": {},
+        "December": {}
+      }
+    },
+    "role": "instructor"
+  },
+  "wymsoo": {
+    "role": "student",
+    "username": "wymsoo",
+    "password": "1234",
+    "fullname": "Minnie Soo",
+    "nickname": "minnie",
+    "dob": "13-10-2000",
+    "phone": "91234567",
+    "email": "mini.minniesoo@gmail.com",
+    "zoom_quotas": 0,
+    "purchased": [],
+    "meetings": {
+      "M565": {
+        "instructor": "minniesoo",
+        "meetingdate": "2025-July-17",
+        "timeslot": "15:00-17:00",
+        "preferred_meeting_time": "16:00",
+        "consultation_type": "general",
+        "description": "Hellooo",
+        "resolved": "resolved"
+      },
+      "M615": {
+        "instructor": "minniesoo",
+        "meetingdate": "2025-July-16",
+        "timeslot": "15:00-17:00",
+        "preferred_meeting_time": "12:00",
+        "consultation_type": "general",
+        "description": "Hii",
+        "resolved": "pending"
+      }
+    }
+  },
+  "mei": {
+    "role": "student",
+    "username": "mei",
+    "password": "1234",
+    "fullname": "Chan Siu Mei",
+    "nickname": "Meimei",
+    "dob": "2002",
+    "phone": "64572849",
+    "email": "mei@gmail.com",
+    "contactMethod": "Whatsapp",
+    "zoom_quotas": 0,
+    "purchased": [],
+    "meetings": {
+      "M143": {
+        "instructor": "minniesoo",
+        "meetingdate": "2025-July-31",
+        "timeslot": "09:00-12:00",
+        "preferred_meeting_time": "11:00",
+        "consultation_type": "general",
+        "description": "hi",
+        "resolved": "pending"
+      }
+    }
+  }
+}

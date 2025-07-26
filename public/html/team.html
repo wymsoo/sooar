@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .image {
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullwidth-container-team {
+            display: grid;
+            padding: 10px;
+            border: transparent;
+            border-radius: 10px;
+            margin: 20px;
+            overflow-y: scroll;
+            max-height: 70vh;
+
+        }
+
+        @media (max-width:576px) {
+            .fullwidth-container-team {
+                max-height: none;
+            }
+        }
+
+        .coach-btn {
+            background-color: transparent;
+            border-radius: 10px;
+            border-color: transparent
+        }
+
+        .sep-line-grey {
+            height: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid grey
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="newnav"></div>
+    <div class="sep-bar-10"></div>
+
+    <div class="content-container">
+        <h1>關於SOOAR</h1>
+    </div>
+
+    <div class="content-container">
+        <div style="font-weight:bold; font-size: 1.5em"> 誰適合用SOOAR的服務？</div>
+    </div>
+    <div class="content-container">
+        技術報告<br><br>
+        SOOAR的技術報告適合所有有比賽經驗的球員。小學的球員可以通過家長的陪同下，因應技術報告內容，討論比賽的發揮和技術。中學的球員慢慢已經建立自己的思維，對於乒乓球也會有自己的想法。這個時候更建議球員和教練討論，或是
+        直接約Minnie面談去探討技術，更深入地了解自己的技術。<br><br>
+        職涯發展顧問<br><br>
+        職涯發展顧問以面談形式進行，適合任何球員。Minnie自小就乒乓世家出生，學會走路和學會打乒乓球，基本是同時進行。她的世界從未離開過乒乓球的圈子，12歲入體院， 15歲打全職，
+    </div>
+
+    <div class="content-container">
+        <div style="font-weight:bold; font-size: 1.5em"> 技術報告：只是一場比賽，能觀察到什麼？</div>
+    </div>
+    <div class="content-container">
+        在乒乓球生涯中，Minnie總會評價自己的比賽“贏/輸得有無價值”。我所說的價值不是贏了加多少分，多少排名。所謂的價值是，你在這場比賽當中有沒有學到新的東西。比賽的贏輸有很多因素，可能是實力，但也有可能是運氣，身體狀態，
+        對手發揮等因素。我們衡量這場比賽的價值，要先排除“不可控因素”，例如9：9比對手「滴死」。很多人會執著：「哎呀，如果對手唔滴死，我就贏左啦。」如果你這樣總結比賽，那麼這是一點價值都沒有的。反而可以留意：你6:5那球
+        接發球，若果大膽擰起，是否更上風？若果7:5領先，自己再把握發球權，會不會對比賽局面有正/負面的影響？10:10你發球搶攻側身衝，被對手防過來，到底是對方僥倖，還是你戰術錯誤？當你懂得問自己這些問題，就是有價值的
+        總結，從而訂立訓練方向，望下次比賽有所提升。
+    </div>
+
+    <div class="content-container">
+        <div style="font-weight:bold; font-size: 1.5em"> 如何最好利用SOOAR的服務？</div>
+    </div>
+    <div class="content-container">
+        第一次取得技術報告，你可能會對自己的技術刷新認知。但第二第三次，可能你會發現你重複犯同樣錯誤，例如每次打決勝局都領先輸返。如果球員的比賽機會較多，不妨每一至兩星期，都讓我分析比賽，讓你可以不斷在比賽中提升
+        自己。如果比賽機會較少，可以跟自己的教練，或約球友打打比賽，在非正式的比賽下，獲得比賽經驗。<br> 我的技術報告通常會很詳細解釋，但也不會一次性跟你說數十個問題。可能會選擇5-6個問題，有針對性地分析和解決。
+        我亦建議購有面談服務的技術報告套票，這樣，Minnie能面對面去解釋你不明白的地方，球員亦可以提出更多問題。
+    </div>
+
+    <!-- <div class="content-container">
+        <div style="font-weight:bold; font-size: 1.5em"> 我們的導師</div>
+    </div>
+    <div class="content-container" style="padding-top:0;">
+        <div class="fullwidth-container">
+            <table class="table">
+                <thead>
+                    <th>導師</th>
+                    <th>運動項目</th>
+                    <th>提供服務</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="coach-btn">蘇慧音</button></td>
+                        <td>乒乓球</td>
+                        <td>
+                            <div>技術報告</div>
+                            <div>職涯顧問</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+
+
+    <div class="fullwidth-container-team">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="image"><img src="/images/me.jpg" style="height: 40vh"></div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <div class="content-container">
+                    <h3>蘇慧音（乒乓球）</h3>
+                </div>
+                <div class="content-container">
+                    2018年世錦賽以“粉紅頭”3:0爆冷大滿貫得主 —— 丁寧，一戰成名，2021年再此披上”粉紅頭“戰衣奪得奧運銅牌。蘇慧音肩負罕見神經傷患，為香港創歷史佳績。15歲便為運動員全職生涯而輟學的她，隨後再靠自修，以GCE
+                    AS Level 8份卷全部滿分的成績入讀科大物理系，同時延修人工智能，曾獲Dean's List。</div>
+                <div class="content-container">
+                    <div style="color:#DA7B93">顧問服務及主要內容</div>
+                    <ul>
+                        <li>技術顧問 -- 先將一場比賽發送給蘇慧音，蘇慧音便會提供完整的比賽分析和總結，訂立短期訓練計畫和長遠的發展方向。
+                            <div class="sep-bar-10"></div>
+                            <div><button class="mybtn-grid" onclick="gotoabout1()">了解詳情</button></div>
+                        </li>
+                        <li>職涯顧問 -- 以Zoom Meeting的方式和蘇慧音探討心態瓶頸，或咨詢乒乓球運動員全職生涯有關事宜。亦可以向蘇慧音提問有關學生運動員雙向發展的心得。
+                            <div class="sep-bar-10"></div>
+                            <div><button class="mybtn-grid" onclick="gotoabout2()">了解詳情</button></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            function gotoabout1(){
+                window.location.href = "/html/technique.html"
+            }
+
+            function gotoabout2(){
+                window.location.href = "/html/f2fabout.html"
+            }
+
+    </script>
+
+
+
+
+
+
+
+
+    <script src="../js/new_navbar.js"></script>
+    <script src="../js/btnstyles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

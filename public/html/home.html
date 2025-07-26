@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home page </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .header-font {
+            font-size: 3em;
+        }
+
+        .subheader-font {
+            font-size: 24px;
+            color: grey;
+        }
+
+        @media (max-width: 768px) {
+            .header-font {
+                font-size: 2.5em;
+            }
+
+            .subheader-font {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-font {
+                font-size: 23px;
+            }
+
+            .subheader-font {
+                font-size: 14px;
+            }
+        }
+
+        .centered-fwcontainer {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .clickbait {
+            font-size: 30px;
+            border-radius: 20px;
+            background-color: aliceblue;
+            padding: 30px;
+            cursor: pointer;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div class="sep-bar-10"></div>
+    <div class="sep-line"></div>
+
+
+    <div class="main-container" style="background-color:aliceblue; height: 50vh; width: 120%">
+        <div class="block-container">
+            <div class="content-container">
+                <div class="header-font"> 一面奧運獎牌</div>
+            </div>
+            <div style="padding-left: 30%">
+                <div class="header-font"> 藏著無數故事</div>
+            </div>
+        </div>
+
+        <div class="block-container" style="background-color: aliceblue;">
+            <div class="content-container">
+                <div class="subheader-font"> "運動員這條路不好走，還是讀書比較有保障。"</div>
+                <div class="subheader-font"> “怎麼練都突破不了，我不適合打乒乓球。“</div>
+            </div>
+            <div class="content-container">
+                <div class="subheader-font" style="font-weight:bold; padding: 20px 0px; color: black"> 你曾否說過這些話？</div>
+                <div style="font-weight:bold;">讓奧運得獎球員和你分享他的技術見解和職涯經驗！</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sep-bar-10"></div>
+
+    <div class="main-container">
+        <div class="block-container">
+            <div class="clickbait">
+                <div> <a class="link" href="index.html">技術顧問</a> </div>
+                <div class="sep-bar-10"></div>
+                <div style="font-size: 20px"> 給我們發送一條比賽片段，我們為您提供專業的比賽報告和比賽旁述</div>
+            </div>
+        </div>
+        <div class="block-container">
+            <div class="clickbait">
+                <div>學生運動員生涯顧問 </div>
+                <div class="sep-bar-10"></div>
+                <div style="font-size: 20px"> 與蘇慧音網上面談，交流運動員心得</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fullwidth-container">
+
+        <div class="shelf-container">
+
+            <div style="padding-left: 20px;">
+                <h1>關於我們</h1>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quo? Aliquid suscipit totam
+                    blanditiis tenetur nisi laudantium, animi a natus vel ullam nihil hic tempora provident amet! Quos,
+                    voluptatibus praesentium.
+                </div>
+                <div> Hello</div>
+            </div>
+
+            <div> <img src="../images/pic.jpg"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione commodi quidem esse in, rem error
+                laudantium nesciunt distinctio provident beatae voluptatem sapiente, ea ipsum molestiae dolorem tenetur
+                dolore, facilis molestias.</div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        $('.clickbait').on("mouseenter",
+            function () {
+                $(this).css('background', 'darkblue');
+                $(this).css('color', 'white');
+                $(this).css('transition-duration', '0.3s');
+            })
+        $('.clickbait').on("mouseleave",
+            function () {
+                $(this).css('background', "aliceblue");
+                $(this).css('color', 'black');
+                $(this).css('transition-duration', '0.3s');
+            }
+        )
+    </script>
+
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Purchase </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div class="sep-bar-10"></div>
+    <div class="sep-line"></div>
+
+
+    <div class="block-container" style="margin-left: 20px;">
+        <div>
+            <h1> 購買顧問服務</h1>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="fixedbox">
+            <div id="infoblock" class="block-container">
+                <div class="content-container">
+
+                    <h3> 技術顧問 </h3>
+                    <h4> 你的預約</h4>
+                    <div class="shelf-container">
+                        <div> 訂單編號 </div>
+                        <div> 1234</div>
+                    </div>
+                    <div class="sep-bar-10"></div>
+                    <div class="shelf-container">
+                        <div> 第一階段 </div>
+
+                        <div> 已購買</div>
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <button class="mybtn2"> 新技術顧問預約</button>
+
+                </div>
+                <div class="content-container">
+                    <div>
+                        <h3> 學生運動員面談顧問</h3>
+                    </div>
+
+                    <div class="shelf-container">
+                        <div> 預約時間</div>
+                        <div> 狀態</div>
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <div class="shelf-container">
+                        <div> 15:00-15:30 </div>
+                        <div> 處理中</div>
+                    </div>
+                    <div class="sep-bar-10"></div>
+                    <button class="mybtn2"> 預約</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="fixedbox">
+            <div id="infoblock" class="block-container">
+                <div class="content-container">
+
+                    <h3> 新預訂 </h3>
+                    <div class="shelf-container">
+                        <div> 訂單編號：</div>
+                        <input type="number" value=1234 disabled="true">
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <div class="shelf-container">
+                        <div> 階段：</div>
+                        <input type="number" value=1234 disabled="true">
+                    </div>
+                    <div class="sep-bar-10"></div>
+                    <div class="shelf-container">
+                        <div> 付款方式：</div>
+                        <select>
+                            <option> FPS </option>
+                            <option> Payme </option>
+                            <option> WeChat Pay </option>
+                            <option> Alipay HK </option>
+                        </select>
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <button class="mybtn2"> 確認訂單</button>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+
+        <script>
+            function loadNavbar() {
+                fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(data => {
+                        document.getElementById('nav').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading navbar:', error));
+            }
+            document.addEventListener('DOMContentLoaded', loadNavbar);
+
+        </script>
+
+</body>
+
+</html>

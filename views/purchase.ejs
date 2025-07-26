@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Purchase </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/soarerbtn.css">
+    <link rel="stylesheet" href="../css/popup_chat.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .table td {
+    width: 50vw; /* Adjust this value as necessary */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="newnav"></div>
+    <div class="sep-bar-10"></div>
+    <div class="outer-circle animate bounce">
+        <button class="inner-circle" onclick="gotochat()"></button>
+    </div>
+
+    <div id="popup_chat" style="display:none"></div>
+
+
+    <div class="unlock"> Logged in as <%= user_session %>
+    </div>
+
+
+    <div class="block-container" style="margin-left: 20px;">
+        <div>
+            <h1> 解鎖技術報告</h1>
+        </div>
+    </div>
+    <div id="formbox" class="fullwidth-container" style="display:none">
+        <div id="newOrderForm" class="fixedbox">
+            <div id="infoblock" class="block-container">
+                <div class="content-container">
+
+                    <h3> 新預訂 </h3>
+                    <div class="shelf-container">
+                        <div> 訂單編號：</div>
+                        <input id="orderID" type="number" value=0000 disabled="true">
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <div class="shelf-container">
+                        <div> 階段：</div>
+                        <input id="orderStage" value=0000 disabled="true">
+                    </div>
+                    <div class="sep-bar-10"></div>
+                    <div class="shelf-container">
+                        <div> 付款方式：</div>
+                        <select>
+                            <option> FPS </option>
+                            <option> Payme </option>
+                            <option> WeChat Pay </option>
+                            <option> Alipay HK </option>
+                        </select>
+                    </div>
+
+                    <div class="sep-bar-10"></div>
+
+                    <button class="mybtn" onclick="submitOrder()"> 確認訂單</button>
+                </div>
+
+                <div id="orderSuccess"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="fullwidth-container">
+        <div id="infoblock" class="block-container">
+            <div class="content-container">
+
+                <h3> 技術顧問 </h3>
+                <% if (userinfo.purchased) { %>
+                    <h4> 你的預約</h4>
+                    <% userinfo.purchased.forEach((purchase)=> { %>
+                        <div class="sep-bar-10"></div>
+                        <table class="table">
+                            <thead>
+                                <th> 訂單編號 </th>
+                                <th><%= purchase.id %></th>
+                            </thead>
+                            <tbody>
+                                <% Object.keys(purchase.stage).forEach((key)=> { %>
+                                    <tr>
+                                        <% const stage=parseInt(key);
+                                        const newid=stage + purchase.id; 
+                                        if ((stage!=1) && (purchase.stage[key].status=="locked")){
+                                            if ((purchase.stage[String(stage-1)].status=="pending")) { %>
+                                                <div class="sep-bar-10"></div>
+                                                <td> 第<%= stage %> 階段 </td>
+                                                <td><button id="purchase-<%= newid %>" class="mybtn-grid" onclick="orderForm(this.id)"> 解鎖 </button></td>                                             
+                                            <% } else { %>
+                                                <div class="sep-bar-10"></div>
+                                                <td>第<%= stage %> 階段 </td>
+                                                <td> 請先解鎖上一階段 </td>
+                                            <% } %>
+                                        <% } else if ((stage==1) && (purchase.stage[key].status=="locked")){ %>
+                                            <div class="sep-bar-10"></div>
+                                            <td> 第<%= stage %> 階段 </td>
+                                            <td><button id="purchase-<%= newid %>" class="mybtn-grid" onclick="orderForm(this.id)"> 解鎖 </button></td>                                                      
+                                        <% } else if (purchase.stage[String(stage)].status=="locked" && (purchase.stage[String(stage-1)].status=="locked")) { %>
+                                            <div class="sep-bar-10"></div>
+                                            <td>第<%= stage %> 階段 </td>
+                                            <td> 請先解鎖上一階段 </td>
+                                        <% } else { %>
+                                            <div class="sep-bar-10"></div>
+                                            <td>第<%= stage %> 階段 </td>
+                                            <td> 已購買 </td>
+                                        <% } %>
+                                    </tr>
+                                    <% }); %>
+                                    <tr>
+                                        <td> 旁述影片</td>
+                                        <% if (purchase.video.status == "pending") {%>
+                                        <td> 已解鎖 </td>
+                                        <% } else { %>
+                                            <td><button id="purchasevid-<%= purchase.id %>" class="mybtn-grid" onclick="orderForm(this.id)"> 解鎖 </button></td>
+                                        <% } %>                                         
+                                    </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="sep-line"></div>
+                        <%}); %>
+
+                        <%  } else { %>
+                            <div class="unlock"> 你暫時沒有訂購任何服務。</div>
+                        <% } %>
+
+                                <div class="sep-bar-10"></div>
+
+                                <button class="mybtn-grid" onclick="goToNewPurchase()">新技術顧問預約</button>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+
+        function goToNewPurchase() {
+            window.location.href = "/students/newpurchase";
+        }
+
+        function orderForm(id) {
+            window.scrollTo(0,0)
+            $('#formbox').show();
+            const get_id = id.split("-");
+            const real_id = get_id[1];
+            console.log("ID: ", real_id);
+            const stage = id[id.length - 1];
+            const purchaseId = parseInt(real_id) - parseInt(stage);
+            $('#orderID').val(purchaseId);
+            if (get_id[0]=="purchase"){
+                $('#orderStage').val(stage);
+            } else {
+                $('#orderStage').val("旁述影片");
+            }
+            
+
+        }
+
+
+        function submitOrder() {
+            const stage = $('#orderStage').val();
+            const data = {
+                "stage": stage
+            }
+
+            fetch(`/purchase/submitOrder?orderid=${$('#orderID').val()}`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then((res) => res.json()).then((data) => {
+                if (data.message === "success") {
+                    $('#orderSuccess').text('Order successful.')
+                    alert("Purchase successful.")
+                    window.location.href = "/students/";
+                } else {
+                    $('#orderSuccess').text('Order failed.')
+                }
+            }).catch((e) => console.error(e))
+        }
+    </script>
+
+    <div id="footerHTML"></div>
+
+
+    <script src="../js/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="/js/new_navbar.js"></script>
+    <script src="/js/popup_chat.js"></script>
+    <script src="/js/soarerbtn.js"></script>
+    <script src="/js/btnstyles.js"></script>
+
+</body>
+
+</html>

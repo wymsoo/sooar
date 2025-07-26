@@ -1,0 +1,6 @@
+.vscode
+bootstrap-5.3.3-dist/
+.env
+/uploads/*
+.DS_Store
+

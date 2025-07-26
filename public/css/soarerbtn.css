@@ -1,0 +1,26 @@
+    .outer-circle {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: linear-gradient(to right, gold, pink);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      bottom: 10vh;
+      left: 3vw;
+      /* transform: translate(-50%, -50%);  */
+      transition: transform 0.5s;
+      z-index: 1000;
+    }
+
+    .inner-circle {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      position: absolute;
+      background: url("../images/soarer_run.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1100;
+    }

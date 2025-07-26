@@ -1,0 +1,576 @@
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #212222;
+            size: cover;
+        }
+
+        img {
+            max-width: 90vw;
+        }
+
+        .main-container {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .shelf-container {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .block-container {
+            display: grid;
+            width: 100%;
+        }
+
+        /* #infoblock :hover {
+            background-color: rgba(255, 217, 0, 0.376);
+            transition-duration: 0.3s;
+        } */
+
+        .content-container {
+            padding: 40px;
+            display: grid;
+            align-items: center;
+        }
+
+        .sep-bar-10 {
+            width: 100%;
+            height: 10px;
+        }
+
+
+        .mybtn {
+            background-color: #DA7B93;
+            border-radius: 5px;
+            color: black;
+            padding: 15px;
+            cursor: pointer;
+            border-color: #DA7B93;
+            box-shadow: #bd637a;
+
+        }
+
+
+        .sep-line {
+            width: 100%;
+            padding: 5px;
+            border-bottom: 2px solid black;
+            height: 10px;
+        }
+
+        .link {
+            text-decoration: none;
+            color:white;
+        }
+
+        .fullwidth-container {
+            display: grid;
+            padding: 10px;
+            border: 2px solid #1C3334;
+            border-radius: 10px;
+            margin: 20px;
+
+        }
+
+        .grid-container {
+            display: grid;
+            padding: 20px;
+        }
+
+        .grid-container div {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .mybtn-grid {
+            background-color: #DA7B93;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            border-color:#DA7B93;
+            box-shadow: #bd637a;
+            color:black;
+        }
+
+        .unlock {
+            color: grey;
+        }
+
+        .fixedbox {
+            width: 400px;
+            height: 500px;
+        }
+
+        .fixedbox2 {
+            width: 60vw;
+        }
+
+        .main-container-row {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        #bookingbox div {
+            display: none;
+        }
+
+        .home-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100vw;
+            height: 90vh;
+            background-image: url("/images/bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .about-container {
+            text-align: center;
+            width: 100vw;
+            height: 110vh;
+            background-image: url("/images/bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .header-font {
+            font-size: 5em;
+            color: white
+        }
+
+        .subheader-font {
+            font-size: 24px;
+            color: #DA7B93;
+        }
+
+        .separationimg {
+            height: 20vh;
+            background: url('/images/ttimg.jpg');
+            background-size: contain;
+            width: 90vw;
+            box-sizing: border-box;
+            background-repeat: no-repeat;
+            margin-top: 50px;
+        }
+
+        @media (min-width: 800px) {
+            .separationimg {
+                display: none;
+            }
+        }
+
+
+        /* Home Page */
+
+        .header-font {
+            font-size: 5em;
+            color: white
+        }
+
+        .subheader-font {
+            font-size: 24px;
+            color: #DA7B93;
+        }
+
+        @media (max-width: 768px) {
+            .header-font {
+                font-size: 3em;
+            }
+
+            .subheader-font {
+                font-size: 16px;
+            }
+
+            .clickbait2 {
+                font-size: 30px;
+                padding: 20px;
+                margin: 15px
+            }
+
+            .homepage-img {
+                max-height: 500px;
+            }
+
+
+
+
+        }
+
+        @media (max-width: 1080px){
+            .home-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .header-font {
+                font-size: 2em;
+            }
+
+            .subheader-font {
+                font-size: 14px;
+            }
+
+            .clickbait2 {
+            font-size: 20px; /* Smaller font size for mobile */
+            padding: 15px; /* Reduced padding */
+            margin: 10px; /* Reduced margin */
+        }
+            .hide {
+                display: none;
+            }
+
+            .homepage-img {
+                max-height: 400px;
+            }
+
+
+        }
+
+        .centered-fwcontainer {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .clickbait {
+            font-size: 30px;
+            border-radius: 20px;
+            background: rgba(247, 202, 0, 0.3);
+            padding: 30px;
+            cursor: pointer;
+            margin: 20px;
+            color: white;
+        }
+
+        .clickbait2 {
+            /* width:30vw; */
+            font-size: 30px;
+            border-radius: 20px;
+            background-color: #DA7B93;
+            padding: 20px;
+            cursor: pointer;
+            margin: 20px;
+            color: #1C3334;
+        }
+/* 
+        .clickbait2 :hover {
+            color: white;
+            background-color: #2E151B;
+            padding: 30px;
+            cursor: pointer;
+            margin: 20px;
+        } */
+
+        .clickbait div {
+            color: white;
+        }
+
+        #banner {
+            background-image: url("/images/background.jpg");
+            background-repeat: no-repeat;
+            background-size: 800px 452px;
+        }
+
+        #banner2 {
+            background-image: url("/images/background2.jpg");
+            background-repeat: no-repeat;
+            background-size: 645px 452px;
+        }
+
+
+        .bg-dark {
+            background-color: #212222 !important;
+            border: none !important;
+            border-width: 0 !important;
+        }
+
+
+        .home-descriptionbox {
+            padding:20% 10px;
+            margin:0;
+        }
+
+        .home-descriptionbox div{
+            display:flex;
+            justify-content: center;
+            text-align: center;
+            margin:5px;
+        }
+
+        .homepage-img {
+            height: 600px;
+        }
+
+        
+
+        @media (max-width: 768px) {
+            .header-font {
+                font-size: 3em;
+            }
+
+            .subheader-font {
+                font-size: 16px;
+            }
+
+            .clickbait2 {
+                font-size: 30px;
+                padding: 20px;
+                margin: 15px
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .header-font {
+                font-size: 2em;
+            }
+
+            .subheader-font {
+                font-size: 14px;
+            }
+
+            .clickbait2 {
+            font-size: 20px; /* Smaller font size for mobile */
+            padding: 15px; /* Reduced padding */
+            margin: 10px; /* Reduced margin */
+        }
+
+
+        }
+
+
+        /* End of Home Page */
+
+
+        /* About page */
+
+        .about-box {
+            border-color: white;
+            background-color: rgba(255, 217, 0, 0.335);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 50px;
+            text-align: left;
+            height: 35vh;
+        }
+
+
+        .about-box-small {
+            border-color: white;
+            background-color: rgba(255, 217, 0, 0.335);
+            border-radius: 20px;
+            margin: 20px;
+            text-align: left;
+            height: 17vh;
+            padding: 5px 20px;
+        }
+
+        .about-box div {
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
+        }
+
+        .about-box-small div {
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .md-font {
+            font-size: 2em;
+        }
+
+
+        .about-img {
+            width: 500px;
+            height: 350px;
+            border-radius: 20px;
+            margin: 50px
+        }
+
+        #ttimg {
+            display: none
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            /* Tablets and below */
+            .about-box {
+                padding: 30px;
+                /* Reduced padding */
+                height: 25vh;
+                /* Adjust height */
+            }
+
+            .about-box-small {
+                padding: 10px;
+                /* Increased padding for better touch */
+                height: auto;
+                /* Allow height to adjust based on content */
+            }
+
+            .about-box div,
+            .about-box-small div {
+                font-size: 1.2em;
+                /* Smaller font size for readability */
+                padding: 10px;
+                /* Adjust padding */
+            }
+
+            .technical-info-container div { 
+            margin: 10px;
+        }
+        }
+
+        @media (max-width: 576px) {
+            #ttimg {
+                display: block;
+            }
+
+            /* Phones and below */
+            .about-box {
+                padding: 20px;
+                height: auto;
+                margin: 10px;
+                /* Reduced margin */
+            }
+
+            .about-box-small {
+                padding: 5px;
+                height: auto;
+            }
+
+            .about-box div,
+            .about-box-small div {
+                font-size: 1em;
+                /* Further reduced font size */
+            }
+
+            .md-font {
+                font-size: 1.5em;
+                /* Reduced font size for headers */
+            }
+
+            .about-img {
+                width: 300px;
+                height: 200px;
+            }
+
+            #techniqueHTML {
+                display: none
+            }
+
+            #f2fHTML {
+                display: none;
+            }
+
+        }
+
+        /* end of about page */
+
+        /* footer */
+        .footer {
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+            background-color: #212222;
+            height: 20vh;
+            color: white;
+            font-size: 0.7rem;
+            
+        }
+
+        .footer div{
+            max-width: 90vw;
+        }
+
+        /* end of footer */
+
+
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .shelf-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .block-container {
+                grid-template-columns: 1fr;
+                /* Stack items vertically */
+            }
+
+            .content-container {
+                padding: 20px;
+                /* Reduce padding */
+            }
+
+            .mybtn {
+                width: 100%;
+                /* Full width buttons */
+                padding: 10px;
+                /* Reduce padding */
+            }
+
+            .fullwidth-container {
+                margin: 10px;
+                /* Reduce margin */
+                padding: 15px;
+                /* Reduce padding */
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Stack grid items */
+                padding: 10px;
+                /* Reduce padding */
+            }
+
+            .fixedbox {
+                width: 90%;
+                /* Make fixed box responsive */
+                height: auto;
+                /* Allow height to adjust */
+            }
+
+            .fixedbox2 {
+                width: 90vw;
+                /* Adjust width for smaller screens */
+            }
+
+            .main-container-row {
+                flex-direction: column;
+                /* Stack rows vertically */
+                padding: 5px;
+                /* Reduce padding */
+            }
+
+            #bookingbox div {
+                display: block;
+                /* Show booking box items on mobile */
+            }
+        }

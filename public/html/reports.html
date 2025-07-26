@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Your Reports </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <div class="sep-line"></div>
+    <div class="sep-bar-10"></div>
+
+    <div class="block-container" style="margin-left: 20px;">
+        <div>
+            <h1> 你的報告</h1>
+        </div>
+    </div>
+
+    <div class="fullwidth-container">
+        <div class="main-container">
+            <div class="grid-container">
+                <h3>提交影片日期</h3>
+                <div> 02 June 2025</div>
+                <div> 02 June 2025</div>
+            </div>
+            <div class="grid-container">
+                <h3>階段</h3>
+                <div> 第一階段</div>
+                <div> 第二階段</div>
+            </div>
+            <div class="grid-container">
+                <h3>報告</h3>
+                <div><button id="report1link" class="mybtn-grid"> 按此查看</button></div>
+                <div><button class="mybtn-grid"> 按此查看</button></div>
+            </div>
+            <div class="grid-container">
+                <h3> 解鎖 </h3>
+                <div class="unlock"> 已解鎖</div>
+                <div><button class="mybtn-grid"> 解鎖下一階段</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $('.mybtn-grid').on("mouseenter",
+            function () {
+                $(this).css('background', 'darkblue');
+                $(this).css('color', 'white')
+                $(this).css('transition-duration', '0.3s')
+            })
+        $('.mybtn-grid').on("mouseleave",
+            function () {
+                $(this).css('background', "aliceblue");
+                $(this).css('color', 'black')
+            }
+        )
+
+        $('#report1link').on("click", () => {
+            window.location.href = "report1.html"
+        })
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav_login = document.getElementById('login-user');
+            console.log(nav_login)
+            const user = sessionStorage.getItem('username');
+            nav_login.innerHTML = `已登入：${user}`;
+            nav_login.className = "unlock";
+        });
+
+
+    </script>
+
+    <script src="../js/navbar.js"></script>
+
+</body>
+
+</html>

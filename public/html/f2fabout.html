@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/popup_chat.css">
+    <link rel="stylesheet" href="../css/soarerbtn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @media (max-width:568px){
+            .card {
+                max-width: 350px
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="newnav"></div>
+    <div class="outer-circle animate bounce">
+        <button class="inner-circle" onclick="gotochat()"></button>
+    </div>
+    <div id="popup_chat" style="display: none"></div>
+
+    <div style="background-color:white;">
+        <div class="content-container animated fadeInLeft">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div>
+                        <h1 class="header-font" style="color:black">網上面談顧問</h1>
+                    </div>
+                    <div style="width:80vw">
+                        <h3>對運動的前程感到迷茫？</h3>
+                        <h3 style="color:#DA7B93">別擔心</h3>
+                        <h3 style="color:#DA7B93">我也曾歷經這個階段</h3>
+                        <h3 style="color:#D1B000">無論是心態瓶頸，或是對運動生涯感到疑惑</h3>
+                        <h3>我們很樂意分享我們的經驗，助你走出困惑。</h3>
+                    </div>
+                    <button class="mybtn" onclick="gotof2fbooking()" style="background-color: #D1B000; color: white"> 立即預約</button>
+                    <div class="sep-bar-10"></div>
+                    <button class="mybtn" onclick="gotoprice()"> 價目表</button>
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                <img class="about-img" src="/images/speech.jpg">
+                </div>
+            </div>
+
+            <div class="separationimg"></div>
+            <div class="main-container technical-info-container">
+                <div class="card animate fadeInDown" style="width: 28rem;">
+                    <img src="/images/confused.JPG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">常見心態問題</h5>
+                        <p class="card-text">為何每次比賽關鍵時刻都“手緊“而輸掉？若果輸到完全失去信心，如何走出陰霾？父母的期望讓我很有壓力，但我不想讓他們失望，怎麼辦？</p>
+
+                    </div>
+                </div>
+                <div class="card animate fadeInDown" style="width: 28rem;">
+                    <img src="/images/meeting.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">運動前程的困惑</h5>
+                        <p class="card-text">到底我適不適合做全職運動員？做全職運動員後，學業如何平衡？運動員的出路會否很狹窄？</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="separationimg"></div>
+
+    <div id="f2fprice" class="content-container">
+        <h3>價目表</h3>
+    </div>
+
+    <div class="main-container">
+        <div id="infoblock" class="block-container">
+
+            <div class="content-container">
+                <div>
+                    <h3> ZOOM 職涯顧問(30min) $599</h3>
+                    <div>歡迎討論任何有關運動心理，營養，體能，技術，學業與運動的時間分配，職業運動員的過程與出路等。</div>
+                </div>
+                <div class="sep-bar-10"></div>
+                <div class="sep-bar-10"></div>
+                <div class="mybtn" onclick="gotof2fbooking()">立即預約</div>
+                <div class="sep-bar-10"></div>
+                <div class="sep-bar-10"></div>
+                <div class="sep-bar-10"></div>
+                <div class="sep-bar-10"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function gotof2fbooking() {
+                window.location.href = "/students/f2fpurchase"
+            }
+
+        function gotoprice(){
+            window.location.href = "/html/f2fabout.html#f2fprice"
+        }
+    </script>
+
+    <script src="../js/new_navbar.js"></script>
+    <script src="../js/btnstyles.js"></script>
+    <script src="/js/animate.js"></script>
+    <script src="/js/popup_chat.js"></script>
+    <script src="/js/soarerbtn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

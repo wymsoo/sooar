@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Show all Purchases </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .grid-container2 {
+            display: grid;
+            width: 30vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="newnav"></div>
+    <!-- <div class="sep-bar-10"></div>
+    <div class="sep-line"></div> -->
+
+    <div class="content-container">
+        <h2> 你的訂單</h2>
+    </div>
+
+    <div class="content-container">
+        <h3> 報告</h3>
+    </div>
+
+    <div class="fullwidth-container">
+        <table class="table table-hover">
+            <thead>
+            <th> 訂單編號</th>
+            <th> 日期</th>
+            <th> 學員</th>
+            <th> 階段</th>
+            <th> 狀態</th>
+            <th> 完成</th>
+            </thead>
+        <tbody>
+        <% Object.keys(instructordata.orders).forEach((key)=>{ 
+            console.log(instructordata.orders[key])%>
+            
+            <tr>
+                <td>
+                    <%= key %>
+                </td>
+                <td>
+                    <%= instructordata.orders[key].info.date %>
+                </td>
+                <td>
+                    <%= instructordata.orders[key].user %>
+                </td>
+                <td> <%= instructordata.orders[key].info.plan %></td>
+            
+                      <%  if (instructordata.orders[key].info.complete==false &&
+                        instructordata.orders[key].info.stage["1"].status==="pending") { %>
+
+                            
+                                <td> 未完成 </td>
+                                <td>
+                                <form action="/writeReport" method="GET">
+                                    <input type="hidden" name="userid" value="<%= instructordata.orders[key].user%>">
+                                    <input type="hidden" name="purchaseid"
+                                        value="<%= instructordata.orders[key].info.id%>">
+                                    <input type="hidden" name="purchasedate"
+                                        value="<%= instructordata.orders[key].info.date %>">
+                                    <input type="hidden" name="stage1"
+                                        value="<%= instructordata.orders[key].info.stage["1"].status %>">
+                                    <input type="hidden" name="stage2"
+                                        value="<%= instructordata.orders[key].info.stage["2"].status %>">
+                                    <input type="hidden" name="stage3"
+                                        value="<%= instructordata.orders[key].info.stage["3"].status %>">
+
+
+                                    <button class="mybtn-grid" style="background-color: #DA7B93;"> 現在完成</button>
+                                </form>
+                                </td>
+
+                                
+                        
+                        <% } else if (instructordata.orders[key].info.complete==true &&
+                            instructordata.orders[key].info.stage["1"].status==="pending" ){%>
+
+                                    <td> 已完成 </td>
+                                    <td>
+                                    <form action="/writeReport" method="GET">
+                                        <input type="hidden" name="userid"
+                                            value="<%= instructordata.orders[key].user%>">
+                                        <input type="hidden" name="purchaseid"
+                                            value="<%= instructordata.orders[key].info.id%>">
+                                        <input type="hidden" name="purchasedate"
+                                            value="<%= instructordata.orders[key].info.date %>">
+                                        <input type="hidden" name="stage1"
+                                            value="<%= instructordata.orders[key].info.stage["1"].status %>">
+                                        <input type="hidden" name="stage2"
+                                            value="<%= instructordata.orders[key].info.stage["2"].status %>">
+                                        <input type="hidden" name="stage3"
+                                            value="<%= instructordata.orders[key].info.stage["3"].status %>">
+
+                                        <button class="mybtn-grid"style="background-color: #376E6F; color: white;">
+                                            點擊查看</button>
+                                    </form>
+                                    </td>
+                                    <% } %>
+                            
+                            <% }); %> </tr>
+                        
+                </table>
+            </div>
+
+
+
+
+
+    </div>
+
+    <div class="content-container">
+        <h3> 旁述影片</h3>
+    </div>
+
+    <div class="fullwidth-container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th> 訂單編號</th>
+                    <th> 日期</th>
+                    <th> 學員</th>
+                    <th> 狀態</th>
+                    <th> 完成</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <% Object.keys(instructordata.orders).forEach((key)=>{ %>
+
+                        <tr>
+                        <td>
+                            <%= key %>
+                        </td>
+                        <td>
+                            <%= instructordata.orders[key].info.date %>
+                        </td>
+                        <td>
+                            <%= instructordata.orders[key].user %>
+                        </td>
+                        <% if (instructordata.orders[key].info.video.status==="pending" ) { %>
+                            <td> 未完成 </td>
+                            <td>
+                            <form action="/instructor/commentVideo" method="GET">
+                                <input type="hidden" name="userid" value="<%= instructordata.orders[key].user%>">
+                                <input type="hidden" name="purchaseid" value="<%= instructordata.orders[key].info.id%>">
+                                <input type="hidden" name="purchasedate"
+                                    value="<%= instructordata.orders[key].info.date %>">
+                                <button class="mybtn-grid" style="background-color: #DA7B93;"> 現在錄製</button>
+                            </form>
+                            </td>
+
+
+                            <% } else if (instructordata.orders[key].info.video.status==="complete" ){%>
+                                <td> 已完成 </td>
+                                <td>
+                                <form action="/instructor/commentVideo" method="GET">
+                                    <input type="hidden" name="userid" value="<%= instructordata.orders[key].user%>">
+                                    <input type="hidden" name="purchaseid"
+                                        value="<%= instructordata.orders[key].info.id%>">
+                                    <input type="hidden" name="purchasedate"
+                                        value="<%= instructordata.orders[key].info.date %>">
+
+
+                                    <button class="mybtn-grid" style="background-color: #376E6F; color: white;">
+                                        點擊查看</button>
+                                </form>
+                                </td>
+                                <% } %>
+
+
+                                </tr>
+
+                                    <% }); %>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <div id="footerHTML"></div>
+
+
+    <script src="../js/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../js/new_navbar.js"></script>
+</body>
+
+</html>

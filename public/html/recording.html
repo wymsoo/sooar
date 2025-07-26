@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recording </title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/captureStyles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .subcontainerbox-hor {
+            margin-right: 10px; /* Space between the title and button */
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <div class="sep-bar-10"></div>
+    <div class="sep-line"></div>
+
+    <div class="content-container">
+        <h2> 錄像室</h2>
+        <button class="mybtn-grid" id="recordingToggle" style="background-color: rgb(153, 31, 31); color: white; width: 30%"> 
+            Start Recording
+        </button>
+        <div class="sep-bar-10"></div>
+        <button class="mybtn-grid" style="width:30%">Video Tab</button>
+    </div>
+    <div class="content-container">
+        <div class="subcontainerbox-hor">
+
+            <video id="video" autoplay muted></video>
+            <div class="volume-container">
+                <div id="mic-visualizer" class="volume-visualizer"></div>
+            </div>
+            <div class="volume-container">
+                <div id="desk-visualizer" class="volume-visualizer"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <div style="visibility: hidden;" id="audioControls">
+            <input type="range" id="micVolume" name="volume" min="0" max="1" step="0.05" value="1"/>
+            <label for="volume">Mic Volume</label>
+
+            <input type="range" id="deskVolume" name="volume" min="0" max="1" step="0.05" value="0.2"/>
+            <label for="volume">Desktop Volume</label>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="/js/screenRecord.js"></script>
+<script src="/js/navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+  "minniesoo": {
+    "meetings": {
+      "M143": {
+        "student": "mei",
+        "meetingdate": "2025-July-31",
+        "timeslot": "09:00-12:00",
+        "preferred_meeting_time": "11:00",
+        "consultation_type": "general",
+        "description": "hi",
+        "resolved": "pending"
+      }
+    }
+  }
+}

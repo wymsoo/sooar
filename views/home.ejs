@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home page </title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/popup_chat.css">
+    <link rel="stylesheet" href="../css/soarerbtn.css">   
+    <link rel="stylesheet" href="../css/chat.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mogra&family=Noto+Sans+TC:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        #phoneFrame {
+            background: linear-gradient(to bottom, rgba(70, 70, 70, 0.346), rgba(0, 0, 0, 0.8));
+            padding: 0px;
+            padding-top: 40px;
+            padding-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 15px rgba(0, 0, 0, 0.3)
+        }
+
+        #phoneFrame.fullwidth-container {
+            max-width: 50vw;
+        }
+
+        #phoneaccessory {
+            width: 100%;
+        }
+
+
+
+        .hide {
+            display: none;
+        }
+
+        .homepage-img {
+            max-height: 400px;
+            max-width: 80vw;
+        }
+
+        .homepage-icon {
+            max-height: 120px;
+        }
+
+        #mascot {
+            max-width: 90vw;
+        }
+
+
+
+
+
+        @media (max-width: 1100px) {
+
+
+            #phoneFrame {
+                background: linear-gradient(to bottom, rgba(70, 70, 70, 0.346), rgba(0, 0, 0, 0.8));
+                padding: 7px;
+                padding-top: 40px;
+                padding-bottom: 20px;
+                border-radius: 20px;
+                box-shadow: 5px 15px rgba(0, 0, 0, 0.3)
+            }
+
+            #phoneFrame.fullwidth-container {
+                max-width: 100vw;
+            }
+
+            #phoneaccessory {
+                width: 100vw;
+            }
+
+            #companyMoral {
+                display: none;
+            }
+
+        }
+
+        .centered-fwcontainer {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 20px;
+        }
+
+
+
+
+        .bg-dark {
+            background-color: #212222 !important;
+            border: none !important;
+            border-width: 0 !important;
+        }
+
+
+        .home-descriptionbox {
+            padding: 20% 10px;
+            margin: 0;
+        }
+
+        .home-descriptionbox div {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .homepage-img {
+            height: 600px;
+
+        }
+
+        .homepage-icon {
+            height: 600px;
+        }
+
+        .mobileHomeContainer {
+            background: url('/images/mobilebg2.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 80vh;
+            display: flex;
+            max-width: 100vw;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .mobileHomeContainer div {
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (min-width:580px) {
+            .mobileHomeContainer {
+                height: 100vh;
+
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .mobileHomeContainer {
+                display: none;
+            }
+
+            #toggleCompanyMoral {
+                display: none;
+            }
+
+            #closeCompanyMoral {
+                display: none;
+            }
+
+            #arrows {
+                display: none;
+            }
+
+            #mascot {
+                width: 40vw;
+            }
+
+        }
+
+        .col {
+            max-width: 150px;
+            
+        }
+    </style>
+
+</head>
+
+<body style="overflow-y: scroll; overflow-x: hidden; max-width: 100vw; size: cover;">
+    <div id="newnav"></div>
+    <!-- <div class="sep-bar-10"></div>
+    <div class="sep-line"></div> -->
+    <div id="popup_chat" style="display: none"></div>
+    <div class="outer-circle animate bounce">
+        <button id="homebtn" class="inner-circle" onclick="gotochat(this.id)"></button>
+    </div>
+
+    <button type="button" id="introModalBtn" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#introModal" style="display:none"></button>
+    <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">SOOAR向大家問好！</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        Hello！蘇慧音和她的寵物機械人Soarer很高興和大家見面。<br>大家如果有疑惑，隨時可以和寵物機械人Soarer查詢喔！Soarer能給你80%準確的資訊，而且隨時在線，為你服務！ <br> 點擊左下方Soarer的圓形按鈕即可展開對話！
+                    </div>
+                    <div class="main-container">
+                        <div>
+                            <img src="/images/soarer_cheer.jpg" style="height:200px; width:auto; max-width: 200px">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close" type="button" class="mybtn-grid" data-bs-dismiss="modal"
+                            style="background-color: #D1B000; color: white">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="home-container">
+        <div class="row" style="width:100vw">
+            <div class="col">
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <div id="about" class="clickbait2 fadeInLeft"> 立即預約</div>
+            </div>
+            <div class="col">
+                <h1 class="fadeInLeft" style="color:#AAABB8; padding: 50px"> 背後無數個故事</h1>
+            </div>
+            <div class="col">
+                <h1 class="header-font fadeInLeft">一面奧運獎牌</h1>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col hide">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mobileHomeContainer">
+        <div>
+            <h1 style="color: white" class="fadeInLeft animated"> 一面奧運獎牌</h1>
+            <h1 style="color: white" class="fadeInRight animated">背後無數故事</h1>
+            <div class="subheader-font fadeIn in-view" style="color:#DA7B93">遇到技術瓶頸？一直解決不了比賽的心態問題？想知道全職運動員的生活與出路？</div>
+            <button class="mybtn-grid" style="background-color: #D1B000; color: white"
+                onclick="gotoabout()">立即咨詢</button>
+        </div>
+    </div>
+
+    <div class="sep-bar-10"></div>
+
+    <div class="content-container">
+        <h1 class="fadeInDown animate"> SOOAR 的核心價值</h1>
+
+
+        <div class="fullwidth-container fadeIn animate" style="border-color: rgb(171, 170, 170)">
+            <div class="main-container">
+                <img class="homepage-icon" src="/images/me.jpg">
+
+                <div style="font-size: 0.9rem; color: grey; padding: 10px 10px 10px 20px">
+                    <!-- <h5>" 頂尖運動員有的不單是毅力，讓他們出色的，很多時候是他們的灑脫和闊達。他們除了有精湛的技術，更拿捏著人生起起跌跌應抱著的心態和智慧。" </h5><br> -->
+                     <h5>"努力訓練固然重要，但在努力的前提，我們需要一個明確的方向。教練可以引導及輔助球員，但最後成功與否，還是需要運動員自己思考和分析。成功的運動員要不斷地反思和自我鞭策，通過思維上的突破，開拓屬於自己的道路。“</h5><br>
+                        <div class="sep-bar-10"></div>
+                        <button id="toggleCompanyMoral" class="mybtn-grid" style="margin-left: 40%">閱讀更多</button>
+                        <div class="sep-bar-10"></div>
+                        <!-- <div id="companyMoral">
+                            每一個成功的運動員都有無數個失敗。我曾認識運動員，一年內面對失父之痛，並患上兩個嚴重傷患，忍著身體和精神的折磨，依然每日完成訓練，每日在球館都掛著堅強的笑容。一年後，她做了兩個手術，奪得了歐洲冠軍。另一名運動員，為了職涯生涯，18隨便離開家人定居異地，當中因受傷成績不佳，被贊助商解約，每日都需要節衣縮食地生活，並到處尋找有可觀收入的俱樂部。我認識她時，她才23歲，世界排名不進100。我甚至質疑了她努力的原因，當時我想，成績不佳，又賺不到錢，為何要堅持？29歲的時候，她進了世界前30，成為歐洲知名球員。有運動員得癌症後，成為世界冠軍，有球員經歷兩條阿基里斯腱斷了後，奪得洲份冠軍。<br>
+                            <div class="sep-bar-10"></div><b>運動員有的不單是毅力，讓他們出色的，很多時候是他們的灑脫和闊達拿捏著人生起起跌跌應抱著的心態和智慧。</b>
+                            SOOAR希望可以讓年輕運動員，無論是兼職，全職還是愛好者，都<b>有機會與頂尖運動員互動，並得到啟發，開創屬於自己的精彩人生。</b>
+                            <div class="sep-bar-10"></div>
+                            <button id="closeCompanyMoral" class="mybtn-grid"
+                                style="margin-left: 40%; background-color: gainsboro">關閉</button>
+                        </div> -->
+                        <div id="companyMoral">
+                            從入少兒菁英開始，教練邊督促我們寫訓練日記，反思和總結自己當日的訓練成果。今天有什麼進步了，有什麼做得不好，都是明天訓練的動力。<br> <b>現在有很多球員很熱愛打乒乓球，每周練7天，
+                            嘗試跟不同教練，上大陸訓練等，即便訓練看起來「似模似樣」，但比賽成績卻不如理想。</b>其實乒乓球是一個技巧性很強的項目，除了靠日練夜練的基本功，還講求“風格特點”，“擊球技巧”，“技術戰術運用”，
+                            “比賽心態”，“揣摩對手心態” 等。我所提及的，和基本功一樣重要，但很多球員自小就忽略了這些細節，導致比賽當中很難發揮訓練的水平。<br><br> 要進步，教練只能輔助，最後還是要靠球員自身的
+                            要求和認知。我希望可以通過自己寫了十多年的訓練日記和比賽總結，和球員一起了解自己的優缺點。指導他們如何通過觀察比賽細節來分析自己的不足，並訂立訓練計畫。除了分享我自身的知識和經驗，更希望球員
+                            自己能培養這種獨立思考能力，並更有方向和目的去提升自己。<div class="sep-bar-10"></div>
+                            <div class="sep-bar-10"></div>
+                            <button id="closeCompanyMoral" class="mybtn-grid"
+                                style="margin-left: 40%; background-color: gainsboro">關閉</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="separationimg fadeIn animate"></div>
+
+    <div class="content-container" style="text-align:center">
+        <h1 class="header-font fadeInDown animate" style="color:#D1B000">
+            認識下<br>Minnie嘅機械寵物“阿翔”！</h1>
+    </div>
+    <div class="sep-bar-10"></div>
+    <div class="sep-bar-10"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-xl-5">
+            <img id="mascot" class="fadeIn animate" src="/images/soarer_hi.jpg">
+        </div>
+
+        <!-- Down arrows -->
+        <div id="arrows" class="main-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor"
+                class="bi bi-caret-down fadeInDown animate" viewBox="0 0 16 16">
+                <path
+                    d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor"
+                class="bi bi-caret-down fadeInDown animate" viewBox="0 0 16 16">
+                <path
+                    d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor"
+                class="bi bi-caret-down fadeInDown animate" viewBox="0 0 16 16">
+                <path
+                    d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+            </svg>
+        </div>
+
+        <div class="col-md-12 col-xl-7">
+
+            <div id="phoneFrame" class="fullwidth-container fadeInDown animate">
+
+                <div id="phoneaccessory" style="text-align: center; display: flex; justify-content: center;">
+                    <div style="width: 20%; border-radius: 30px; background-color: black; height: 10px; color: black">
+                        ------
+                    </div>
+                </div>
+                <div class="sep-bar-10"></div>
+                <div class="page">
+                    <div class="marvel-device nexus5">
+                        <div class="screen">
+                            <div class="screen-container">
+                                <div class="chat">
+                                    <div class="chat-container">
+                                        <div class="user-bar">
+                                            <div class="back">
+                                                <i class="zmdi zmdi-arrow-left"></i>
+                                            </div>
+                                            <div class="avatar">
+                                                <img src="/images/soarer_hi.jpg" alt="Avatar">
+                                            </div>
+                                            <div class="name">
+                                                <span>SOARER（啊翔）🤖</span>
+                                                <span class="status">online</span>
+                                            </div>
+                                            <div class="actions more">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </div>
+                                            <div class="actions attachment">
+                                                <i class="zmdi zmdi-attachment-alt"></i>
+                                            </div>
+                                            <div class="actions">
+                                                <i class="zmdi zmdi-phone"></i>
+                                            </div>
+                                        </div>
+                                        <div class="conversation">
+                                            <div id="convo" class="conversation-container">
+
+
+                                                <div class="message received">
+                                                    <span
+                                                        class="metadata">你好！我係SOARER，Minnie隻寵物機械人！有咩想了解可以問我！Minnie教識我好多嘢，等我可以儘量答你。😁（不過我都可能會講錯嘢㗎，有關顧問服務個details最好睇番SOOAR網頁嘅資訊！）<span
+                                                            class="time"></span></span>
+                                                </div>
+                                                <div class="message received">
+                                                    <span>你有啲咩想問啊？</span>
+                                                    <span class="metadata"><span class="time"></span></span>
+                                                </div>
+                                                <div id="showmsg" style="display:none">
+                                                    <div class="message received">
+                                                        <span>有咩問題都可以預約我嘅顧問服務！如果係比較general地想探討下唔同嘅運動員心得，可以預約“網上面談”。如果主要係技術問題，可以預訂“技術報告”，send條片比我幫你詳細分析！</span>
+                                                        <span class="metadata"><span class="time"></span></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div id="userinputfield" class="conversation-compose">
+                                                <div class="emoji">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        id="smiley" x="3147" y="3209">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M9.153 11.603c.795 0 1.44-.88 1.44-1.962s-.645-1.96-1.44-1.96c-.795 0-1.44.88-1.44 1.96s.645 1.965 1.44 1.965zM5.95 12.965c-.027-.307-.132 5.218 6.062 5.55 6.066-.25 6.066-5.55 6.066-5.55-6.078 1.416-12.13 0-12.13 0zm11.362 1.108s-.67 1.96-5.05 1.96c-3.506 0-5.39-1.165-5.608-1.96 0 0 5.912 1.055 10.658 0zM11.804 1.01C5.61 1.01.978 6.034.978 12.23s4.826 10.76 11.02 10.76S23.02 18.424 23.02 12.23c0-6.197-5.02-11.22-11.216-11.22zM12 21.355c-5.273 0-9.38-3.886-9.38-9.16 0-5.272 3.94-9.547 9.214-9.547a9.548 9.548 0 0 1 9.548 9.548c0 5.272-4.11 9.16-9.382 9.16zm3.108-9.75c.795 0 1.44-.88 1.44-1.963s-.645-1.96-1.44-1.96c-.795 0-1.44.878-1.44 1.96s.645 1.963 1.44 1.963z"
+                                                            fill="#7d8489" />
+                                                    </svg>
+                                                </div>
+
+                                                <input id="usermessage" class="input-msg" name="input"
+                                                    placeholder="Type a message" autofocus></input>
+                                                <div class="photo">
+                                                    <i class="zmdi zmdi-camera"></i>
+                                                </div>
+                                                <button class="send" onclick="askAI()">
+                                                    <div class="circle">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                                                        </svg>
+                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                    </div>
+                                                </button>
+                                            </div>
+
+                                            <div id="booknow" style="display: none; justify-content: center;"><button
+                                                    class="mybtn-grid" style="width: 100%">立即預約</button></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="content-container">
+        <input id="question" placeholder="askdeepseek">
+        <button onclick="askAI()">Ask AI</button>
+    </div> -->
+
+    <div id="response"></div>
+
+
+
+    <div class="sep-bar-10"></div>
+    <div class="sep-bar-10"></div>
+
+    <div class="content-container"><button class="mybtn-grid" style="background-color: aliceblue; border-color:transparent" onclick="back()"> Back </button></div>
+
+    <div class="sep-bar-10"></div>
+    <div class="sep-bar-10"></div>
+
+
+
+    <script>
+
+        $(document).ready(() => {
+            $('#introModalBtn').click();
+        });
+
+        $('#toggleCompanyMoral').on('click', () => {
+            $('#companyMoral').show();
+            $('#toggleCompanyMoral').hide();
+        })
+
+        $('#closeCompanyMoral').on('click', () => {
+            $('#toggleCompanyMoral').show();
+            $('#companyMoral').hide();
+        })
+
+
+
+        function askAI() {
+            const question = $('#usermessage').val();
+            const data = { question };
+            const response = $('#convo');
+            response[0].insertAdjacentHTML('beforeend',
+                `                       <div class="message sent">
+                                        ${question}
+                                        <span class="metadata">
+                                            <span class="time"></span><span class="tick"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                    id="msg-dblcheck-ack" x="2063" y="2076">
+                                                    <path
+                                                        d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                        fill="#4fc3f7" />
+                                                </svg></span>
+                                        </span>
+                                    </div>`)
+            response[0].insertAdjacentHTML('beforeend',
+                `<div class="message received">
+                                        <span style="color: grey; font-style: italic;"> SOARER is typing...</span>
+                                        <span class="metadata"><span class="time"></span></span>
+                                    </div>`);
+            $('#usermessage').val("");
+            fetch('/deepseek/askDeepSeek', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then((res) => res.json()).then((data) => {
+                if (data.success) {
+                    response.children().last().remove();
+                    response[0].insertAdjacentHTML('beforeend',
+                        `<div class="message received">
+                                        <span>${data.msg}</span>
+                                        <span class="metadata"><span class="time"></span></span>
+                                    </div>`);
+                }
+            }).catch((e) => console.error(e))
+
+        }
+
+        function showUserMessage() {
+            $('#showmsg').show();
+            $('#userinputfield').hide();
+            document.getElementById('booknow').style.display = 'flex';
+        }
+
+    </script>
+
+    <div id="footerHTML"></div>
+
+
+
+    <script>
+        function gotoabout1() {
+            window.location.href = "/html/about.html#techniqueHTML";
+        }
+        function gotoabout2() {
+            window.location.href = "/html/about.html#f2fHTML";
+        }
+
+        function gotoabout() {
+            window.location.href = "/html/about.html";
+        }
+
+        $('#about').on('click', () => {
+            window.location.href = "/html/about.html"
+        })
+    </script>
+
+
+
+
+    <script src="../js/footer.js"></script>
+    <script src="../js/popup_chat.js"></script>
+    <script src="../js/popup_chat.js"></script>
+    <script src="/js/soarerbtn.js"></script>
+    <script src="../js/new_navbar.js"></script>
+    <script src="/js/animate.js"></script>
+    <script src="/js/utilbtn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../js/btnstyles.js"></script>
+</body>
+
+</html>

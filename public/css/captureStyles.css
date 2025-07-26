@@ -1,0 +1,27 @@
+#video {
+    border: 1px solid #999;
+    width: 98%;
+    max-width: 860px;
+}
+
+:root{
+    --colour-good: rgb(0, 180, 0);
+    --colour-warn: rgb(245, 217, 0);
+    --colour-bad: rgb(255, 0, 0);
+}
+
+.volume-container{
+    margin-left: 0%;
+    min-width: 5px; 
+    max-height: 100%;
+    position: relative;
+    float: left;
+}
+
+.volume-visualizer{
+    background-color: red; 
+    height: 0%; 
+    width: 100%; 
+    bottom: 0px; 
+    position: absolute;
+}
