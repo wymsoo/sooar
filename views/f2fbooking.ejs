@@ -324,7 +324,7 @@
             $('#meetingRequestForm').hide()
         }
 
-        function submitForm(e) {
+        async function submitForm(e) {
             e.preventDefault();
             console.log(document.getElementById('yourInstructor').value)
             console.log($('#yourInstructor').val())
@@ -346,7 +346,7 @@
             formdata.append("consultation_type", consultation_type)
             formdata.append('instructor', instructor)
 
-            fetch('/purchase/meetingRequest', {
+            await fetch('/purchase/meetingRequest', {
                 method: 'POST',
                 body: formdata
 

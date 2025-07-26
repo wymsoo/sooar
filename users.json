@@ -106,5 +106,33 @@
         "resolved": "pending"
       }
     }
+  },
+  "hp": {
+    "role": "student",
+    "username": "hp",
+    "password": "123",
+    "fullname": "Harry Poon",
+    "nickname": "Harry Poon",
+    "dob": "2000",
+    "phone": "34939493",
+    "email": "hp@gmail.com",
+    "contactMethod": "whatsapp",
+    "zoom_quotas": 0,
+    "purchased": [],
+    "meetings": {}
+  },
+  "mc": {
+    "role": "student",
+    "username": "mc",
+    "password": "123",
+    "fullname": "Mary Chan",
+    "nickname": "Mary Chan",
+    "dob": "2000",
+    "phone": "91234567",
+    "email": "mc@gmail.com",
+    "contactMethod": "wtsapp",
+    "zoom_quotas": 3,
+    "purchased": [],
+    "meetings": {}
   }
 }

@@ -146,6 +146,53 @@ router.post('/saveReport', (req, res) => {
 
 });
 
+router.post('/uploadCommentaryVideo', new_filename, upload.array('files'), (req, res, err) => {
+    try {
+        if (!req.files) {
+            res.json({ success: false, message: `File not found` })
+            return;
+        }
+        if (err instanceof multer.MulterError) {
+            // A Multer error occurred when uploading.
+            return res.status(400).send(err.message);
+        } else if (err && typeof err != 'function') {
+            console.error(err)
+            // An unknown error occurred when uploading.
+            return res.status(500).send('An unknown error occurred.');
+        }
+
+        const coach = req.session.current_user;
+        const userdata = JSON.parse(fs.readFileSync('users.json'));
+        const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'));
+        const userid = req.query.user;
+        const purchaseid = req.query.purchaseid;
+        console.log(userid, purchaseid)
+
+        userdata[userid].purchased.forEach((purchase) => {
+            if (purchase.id == purchaseid) {
+                purchase.video.status = "complete"
+            }
+        })
+
+        purchasedata[coach].orders[purchaseid].info.video.status = "complete";
+
+        fs.writeFileSync('users.json', JSON.stringify(userdata, null, 2));
+        fs.writeFileSync('allPurchase.json', JSON.stringify(purchasedata, null, 2));
+
+        res.json({ success: true, message: "Successfully uploaded." })
+
+
+    } catch (e) {
+        console.error(e)
+        return res.status(500).send('An unknown error occurred.');
+    }
+});
+function new_filename(req, res, next) {
+    const videopath = req.query.videopath;
+    req.videopath = videopath
+    next();
+}
+
 router.get('/displayAllPurchase', (req, res) => {
     const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'));
     const user = req.session.current_user;

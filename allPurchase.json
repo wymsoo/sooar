@@ -1,43 +1,6 @@
 {
   "minniesoo": {
-    "orders": {
-      "7490": {
-        "user": "chan",
-        "info": {
-          "id": 7490,
-          "plan": "U001",
-          "date": "27-7-2025",
-          "stage": {
-            "1": {
-              "status": "pending",
-              "message": "--",
-              "data": "--"
-            },
-            "2": {
-              "status": "pending",
-              "message": "--",
-              "data": "--"
-            },
-            "3": {
-              "status": "pending",
-              "message": "--",
-              "data": "--"
-            }
-          },
-          "zoom": "locked",
-          "ordered_date": "2025-07-26T16:59:03.457Z",
-          "video": {
-            "status": "pending",
-            "path": [
-              "chan-7490-fullmatch.mp4"
-            ]
-          },
-          "studentQuestion": "hi",
-          "instructor": "minniesoo",
-          "complete": false
-        }
-      }
-    }
+    "orders": {},
   },
   "hp123": {
     "orders": {}

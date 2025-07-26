@@ -287,7 +287,7 @@
                 if (login.status) {
                     sessionStorage.setItem('username', data.username);
                     sessionStorage.setItem('login-status', true);
-                    if (sessionStorage.getItem('login-status') == 'true') {
+                    if (sessionStorage.getItem('login-status') == true) {
                         sessionStorage.setItem('role', login.role);
                         alert(login.message)
                         return true
@@ -308,7 +308,7 @@
             $('#loading').click();
             $('#loading-msg').show();
 
-            if (sessionStorage.getItem('login-status') != true) {
+            if (sessionStorage.getItem('login-status') != 'true') {
                 await registerNewUser();
                 if (!registerNewUser) {
                     return
@@ -329,17 +329,17 @@
                 },
                 body: JSON.stringify(data)
             }).then((res) => res.json()).then((data) => {
-                if (data.success == 'true') {
+                if (data.success == true) {
 
                     $('#close').click();
                     $('#loading-msg').hide();
                     alert("Sucessfully Purchased.");
-                    window.location.href = "/studentMeetings"
+                    window.location.href = "/students/studentMeetings"
                 } else {
                     $('#close').click();
                     $('#loading-msg').hide();
                     alert("Purchase unsuccessful");
-                    window.location.href = "/f2fbooking"
+                    window.location.href = "/students/f2fbooking"
                 }
             }).catch((e) => console.error(e));
         }
