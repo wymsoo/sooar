@@ -50,6 +50,10 @@ app.get('/testcheckout',(req,res)=>{
     res.render('checkout')
 })
 
+app.get('/', (req, res)=>{
+    res.redirect("/display/home");
+})
+
 
 // Function to get the server's IP address
 function getServerIp() {
