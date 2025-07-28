@@ -5,29 +5,35 @@ const path = require('path')
 const stripe = require('stripe')('sk_test_51RlO80Pw6VRYu2WWyHSeWbIJN5gbRpQosjeyrWnc4HUJIGeCFTdl60a1CZ75eVkK6ICZqraCstWf93jicybMNUZQ00ZB41PIiT');
 
 router.post('/create-checkout-session', async (req, res) => {
+  const prod_id = req.body.productid;
+  const purchaseid = req.body.purchaseid;
+  const productdata = JSON.parse(fs.readFileSync('catalog.json'));
+  const prod = productdata[prod_id];
   const session = await stripe.checkout.sessions.create({
     line_items: [{
       price_data: {
-        currency: 'usd',
+        currency: prod.currency,
         product_data: {
-          name: 'T-shirt',
+          name: prod.name
         },
-        unit_amount: 2000,
+        unit_amount: prod.price,
       },
       quantity: 1,
     }],
     mode: 'payment',
     ui_mode: 'embedded',
-    return_url: 'http://localhost:5100/html/checkoutReturn.html'
+    return_url: `http://localhost:5100/checkoutReturn?session_id={CHECKOUT_SESSION_ID}&amount=${String(prod.price)}&id=${prod.id}&type=${prod.type}&purchaseid=${purchaseid}`
+    //redirect_on_completion: 'never'
+
   });
 
-  res.send({clientSecret: session.client_secret});
+  res.json({clientSecret: session.client_secret});
 });
 
 router.get('/session_status', async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 
-  res.send({
+  res.json({
     status: session.status,
     payment_status: session.payment_status,
     customer_email: session.customer_details.email
