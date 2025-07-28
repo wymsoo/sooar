@@ -132,7 +132,7 @@ router.post('/newOrder', new_id, upload.array('files'), (req, res, err) => {
             fs.writeFileSync('allPurchase.json', JSON.stringify(purchasedata, null, 2));
 
 
-            res.json({ success: true, message: `File uploaded successfully: for user: ${purchase}` })
+            res.json({ success: true, message: `File uploaded successfully: for user: ${purchase}`, purchaseid: req.purchase_id })
             // res.send(`File uploaded successfully: ${file.filename} for user: ${req.body.purchase}`);
         } catch (e) {
             console.error(e)

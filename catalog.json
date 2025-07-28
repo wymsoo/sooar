@@ -1,0 +1,38 @@
+{
+    "CC01" : {
+        "id": "CC01",
+        "name": "職涯發展顧問",
+        "type": "meeting",
+        "price": 59900,
+        "currency": "hkd"
+    },
+    "U001" : {
+        "id": "U001",
+        "name": "技術報告套票1",
+        "type": "report",
+        "price": 89900,
+        "currency": "hkd"
+    },
+    "UF01" : {
+        "id": "UF01",
+        "name": "技術報告套票+面談",
+        "type": "report",
+        "price": 119900,
+        "currency": "hkd"
+    },
+    "CV01" : {
+        "id": "CV01",
+        "name": "旁述影片",
+        "type": "report",
+        "price": 39900,
+        "currency": "hkd"
+    },
+    "S001" : {
+        "id": "S001",
+        "name": "技術報告階段",
+        "type": "report",
+        "price": 29900,
+        "currency": "hkd"
+    }
+    
+}

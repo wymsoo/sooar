@@ -53,9 +53,16 @@ async function readMail(req, res) {
 
 async function sendMail(req, res) {
   const student = req.session.current_user;
+  const purchaseid = req.body.purchaseid;
   const userdata = JSON.parse(fs.readFileSync('users.json'));
-  const purchaseitem = req.body.purchase;
-  const instructor = req.body.instructor;
+  let instructor;
+
+  userdata[student].purchased.forEach((purchase)=>{
+    if (purchase.id == purchaseid){
+      instructor = purchase.instructor;
+    }
+  })
+  // const instructor = req.body.instructor;
   const stud_email = userdata[student].email;
   const inst_email = userdata[instructor].email;
   const stud_fullname = userdata[student].fullname;
@@ -72,8 +79,8 @@ async function sendMail(req, res) {
     const mailOptions = {
       from: "mini.minniesoo@gmail.com",
       to: inst_email,
-      subject: `${stud_fullname} -- Purchase: ${purchaseitem}`,
-      text: `Student ${stud_fullname} has purchased item of product id ${purchaseitem}. `,
+      subject: `${stud_fullname} -- Purchase ID: ${purchaseid}`,
+      text: `Student ${stud_fullname} has purchased item of product id ${purchaseid}. `,
     };
 
     const result = await transport.sendMail(mailOptions);

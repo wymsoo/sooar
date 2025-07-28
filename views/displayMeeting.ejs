@@ -102,7 +102,7 @@
             console.log(meetingid)
             let result = confirm("Do you want to mark this meeting as resolved?");
             if (result){
-                fetch(`/instructor/resolveMeeting?meetingid=${meetingid}&student=${student}`)
+                fetch(`/instructors/resolveMeeting?meetingid=${meetingid}&student=${student}`)
                 .then((res)=>res.json()).then((data)=>{
                     if (data.success) {
                         alert(data.message);
@@ -123,10 +123,10 @@
             const meetingtime = $(`#${gettime}`).val()
             const meetingdate = $(`#${getdate}`).val()
 
-            console.log(`/instructor/confirmMeeting?meetingid=${meetingid}&student=${student}&meetingTime=${meetingtime}&meetingDate=${meetingdate}`)
+            console.log(`/instructors/confirmMeeting?meetingid=${meetingid}&student=${student}&meetingTime=${meetingtime}&meetingDate=${meetingdate}`)
             let result = confirm(`Make sure you have confirmed a meeting time with your student before you proceed. Your confirmed date and time is ${meetingdate}, ${meetingtime}.`);
             if (result){
-                fetch(`/instructor/confirmMeeting?meetingid=${meetingid}&student=${student}&meetingTime=${meetingtime}&meetingDate=${meetingdate}`)
+                fetch(`/instructors/confirmMeeting?meetingid=${meetingid}&student=${student}&meetingTime=${meetingtime}&meetingDate=${meetingdate}`)
                 .then((res)=>res.json()).then((data)=>{
                     if (data.success) {
                         alert(data.message);

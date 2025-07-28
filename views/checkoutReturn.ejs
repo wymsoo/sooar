@@ -10,7 +10,7 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://js.stripe.com/basil/stripe.js"></script>
-
+    <script src="/js/purchaseResults.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,21 +20,28 @@
 </head>
 
 <body>
+    <div id="newnav"></div>
+    <div class="fullwidth-container">
+        <h1>成功購買</h1>
+        <div id="checkoutInfo"></div>
+    </div>
 
-    <div> Hello</div>
+    <div id="footerHTML"></div>
 
     <script>
-        async function loadPurchaseResults(){
-        const session = await fetch(`/session_status?session_id=${session_id}`)
-        if (session.status == 'open') {
-            // Remount embedded Checkout
-        } else if (session.status == 'complete') {
-            // Show success page
-            // Optionally use session.payment_status or session.customer_email
-            // to customize the success page
-        }
-    }
-    document.addEventListener('DOMContentLoaded', loadPurchaseResults())
+
+        document.addEventListener('DOMContentLoaded', loadPurchaseResults);
+
     </script>
+
+
+    <script src="../js/footer.js"></script>
+    <script src="../js/new_navbar.js"></script>
+    <script src="../js/btnstyles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
