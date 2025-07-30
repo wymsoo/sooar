@@ -10,7 +10,7 @@ router.post('/register', (req, res) => {
     if (username in users) {
         res.json({ success: false, message: "Registration Unsuccessful." })
     } else {
-        users[username] = { role: "student", username, password, fullname, nickname, dob, phone, email, contactMethod, zoom_quotas: 0, purchased: [], meetings: {} };
+        users[username] = { role: "student", username, password, fullname, nickname, dob, phone, email, contactMethod, zoom_quotas: 0, purchased: [], meetings: {}, wallet:0 };
         fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
         res.json({ success: true, message: "Successfully registered." });
     }

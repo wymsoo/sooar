@@ -127,7 +127,7 @@
                     <div class="sep-bar-10"></div>
                     <select id="selectedCoach" style="width: 100%" required>
                         <% coachlist.forEach((coach)=> { %>
-                            <option value=<%=coach.username %>> <%= coach.nickname %>
+                            <option value=<%= coach.username %>> <%= coach.nickname %>
                             </option>
                             <% }) %>
                     </select>
@@ -181,13 +181,17 @@
                 <label for="paymentmethod"> 4. 付款方式<span class="text-danger">*</span></label>
                 <div>
                     <div class="sep-bar-10"></div><select id="paymentmethod" style="width: 100%" required>
-                        <option value="single"> FPS </option>
-                        <option value="set2"> Payme </option>
-                        <option value="set3"> Alipay HK</option>
+                        <% if (user) { %>
+                        <option value="wallet"> 用SOOAR錢包支付 </option>
+                        <% } %>
+                        <option value="stripe"> 網上支付 </option>
                     </select>
                 </div>
-
                 <div class="sep-bar-10"></div>
+                <% if (user) { %>
+                <div class="unlock" style="font-size: 0.7rem;">你的SOOAR錢包餘額為：<%= userinfo.wallet %></div>
+                <div class="sep-bar-10"></div>
+                <% } %>
                 <button class="mybtn-grid" onclick="initOrder(event)"> 購買 </button>
                 <div class="sep-bar-10"></div>
                 <div id="loading-msg" class="unlock" style="display:none"> Please wait, your purchase is processing...
@@ -212,12 +216,12 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">處理中...</h5>
                 </div>
-                <div class="modal-body">
+                <div id="loading-content" class="modal-body">
                     我們正在處理您的訂單，請稍候... 請不要離開頁面。
                 </div>
                 <div class="modal-footer">
-                    <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        style="display:none">Close</button>
+                    <button id="close2" type="button" class="btn btn-secondary" data-bs-dismiss="modal" disabled
+                        >Please Wait...</button>
                 </div>
             </div>
         </div>
@@ -402,12 +406,15 @@
         // append a new purchase object to purchase array
         async function initOrder(e) {
 
+            const paymentmethod = $('#paymentmethod').val();
             const fileInput = document.querySelector('input[type="file"]');
-            console.log(fileInput)
-            if (fileInput==null) {
+            
+            if (fileInput==null||!fileInput||fileInput==undefined) {
                 alert("Please upload a match video.");
                 return;
             }
+            console.log(fileInput)
+
             e.preventDefault();
             $(this).attr("disabled", "disabled");
             $('#loading').click();
@@ -424,6 +431,7 @@
             const purchase = $('#productname').val();
             const instructor = $('#selectedCoach').val();
             const question = $('#questions').val();
+
 
             let formdata;
             
@@ -469,26 +477,50 @@
             });
             const data = await response.json();
             if (data.success == true) {
-                console.log(data.purchaseid)
-                $('#close').click();
+                if (paymentmethod=='web'){
                 $('#loading-msg').hide();
+                //$('#staticBackdrop').hide();
+                $('#close2').removeAttr('disabled');
+                $('#close2').html('前往付款');
+                $('#loading-content').html("請在10分鐘內完成付款。若10分鐘內未能完成付款，系統會取消你的預訂，你便需要重新購買。")
+                console.log(data.purchaseid)
                 const purchaseresult = await initCheckout(stripe,data.purchaseid);
-                    // alert("Sucessfully Purchased.");
-                    // return (
-                    //     fetch('/mail/send',{
-                    //     method: "POST",
-                    //     headers: {
-                    //         "Content-type": "application/json"
-                    //     },
-                    //     body: JSON.stringify(emaildata)
-                    // })
-                    // )
-                    }
+                } else if (paymentmethod=='wallet'){
+                    fetch(`/purchase/updateWallet?setid=${data.set}&purchaseid=${data.purchaseid}`,{
+                        method:"POST",
+                        headers: {
+                            "Content-type": "application/json"
+                        }
+                    }).then((res)=>res.json()).then((data)=>{
+                        if (data.success){
+                            alert(data.msg);
+                            const emaildata = { "purchaseid": data.purchaseid }
+                            fetch('/mail/send',{
+                                method: "POST",
+                                headers: {
+                                    "Content-type": 'application/json'
+                                },
+                                body: JSON.stringify(emaildata)
+                            }).then((res)=>res.json()).then((data)=>{
+                                if (data.success){
+                                    alert(data.msg)
+                                    window.location.href = "/students/";
+                                }
+                            }).catch((e)=>console.error(e))
+                        } else {
+                            alert(data.msg)
+                            window.location.href = "/students/"
+                            
+                        }
+                    }).catch((e)=> console.error(e))
+                }
+
+                }
             else {
-                    $('#close').click();
+                    $('#close2').click();
                     $('#loading-msg').hide();
                     alert("Purchase unsuccessful");
-                    window.location.href = "/";
+                    window.location.href = "/students/";
                 }
             // }).then((res)=>res.json()).then((data)=>{
             //     if (data.success){
