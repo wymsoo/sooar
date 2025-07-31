@@ -77,7 +77,7 @@ async function sendMail(req, res) {
     });
 
     const mailOptions = {
-      from: "mini.minniesoo@gmail.com",
+      from: CONSTANTS.auth.user,
       to: inst_email,
       subject: `${stud_fullname} -- Purchase ID: ${purchaseid}`,
       text: `Student ${stud_fullname} has purchased item of product id ${purchaseid}. `,

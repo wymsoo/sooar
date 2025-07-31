@@ -54,6 +54,20 @@ app.get('/', (req, res)=>{
     res.redirect("/display/home");
 })
 
+// create "database" directories
+const folders = ['uploads']
+folders.forEach((folderName) => {
+    try {
+        if (!fs.existsSync(__dirname + "/" + folderName)) {
+            fs.mkdirSync(__dirname + "/" + folderName);
+            console.log(`Creating folder at "${__dirname + "/" + folderName}"`)
+        } else {
+            console.log(`Directory "${__dirname + "/" + folderName}" exists.`)
+        }
+    } catch (err) {
+        console.error(err);
+    }
+})
 
 // Function to get the server's IP address
 function getServerIp() {

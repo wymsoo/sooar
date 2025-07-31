@@ -2,15 +2,15 @@ require("dotenv").config();
 
 const auth = {
   type: "OAuth2",
-  user: "mini.minniesoo@gmail.com",
+  user: process.env.USER_EMAIL,
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   refreshToken: process.env.REFRESH_TOKEN,
 };
 
 const mailoptions = {
-  from: "mini.minniesoo@gmail.com",
-  to: "mini.minniesoo@gmail.com",
+  from: process.env.USER_EMAIL,
+  to: process.env.USER_EMAIL,
   subject: "Gmail API NodeJS",
 };
 

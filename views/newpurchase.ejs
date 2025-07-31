@@ -414,11 +414,9 @@
             $('#loading-msg').show();
 
             if (sessionStorage.getItem('login-status') != 'true') {
-                await registerNewUser();
-                if (!registerNewUser) {
-                    return
+                if (await registerNewUser()) {
+                    await autoLogin();
                 }
-                await autoLogin();
             }
 
             const purchase = $('#productname').val();
@@ -428,27 +426,25 @@
             let formdata;
             
             try {
-            
-            formdata = new FormData();
+                formdata = new FormData();
 
+                const videoType = $('.active-btn').attr('id');
+                console.log(videoType)
 
-            const videoType = $('.active-btn').attr('id');
-            console.log(videoType)
-
-            if (videoType === "fullMatchInput") {
-                var input = document.getElementById('fullMatch');
-                if (input && input.files.length > 0) {
-                    formdata.append('files', input.files[0])}; 
-            } else if (videoType == "gameInput") {
-                const fileIDs = ['game1', 'game2', 'game3', 'game4', 'game5'];
-                fileIDs.forEach((id) => {
-                    const fileInput = document.getElementById(id);
-                    if (fileInput && fileInput.files.length > 0) {
-                        for (let i = 0; i < fileInput.files.length; i++) {
-                            formdata.append('files', fileInput.files[i]); 
+                if (videoType === "fullMatchInput") {
+                    var input = document.getElementById('fullMatch');
+                    if (input && input.files.length > 0) {
+                        formdata.append('files', input.files[0])}; 
+                } else if (videoType == "gameInput") {
+                    const fileIDs = ['game1', 'game2', 'game3', 'game4', 'game5'];
+                    fileIDs.forEach((id) => {
+                        const fileInput = document.getElementById(id);
+                        if (fileInput && fileInput.files.length > 0) {
+                            for (let i = 0; i < fileInput.files.length; i++) {
+                                formdata.append('files', fileInput.files[i]); 
+                            }
                         }
-                    }
-                });
+                    });
             }
 
 
@@ -456,11 +452,6 @@
             formdata.append('instructor', instructor);
             formdata.append('videoType', videoType);
             formdata.append('question', question);
-
-            // const emaildata = {
-            //     purchase,
-            //     instructor
-            // }
 
 
             const response = await fetch('/purchase/newOrder', {
