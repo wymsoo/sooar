@@ -4,14 +4,19 @@ const fs = require('fs');
 const upload = require('../middlewares/uploadVid')
 
 router.get('/newpurchase', (req, res) => {
+    const user = req.session.current_user;
     const userdata = JSON.parse(fs.readFileSync('users.json'));
+    const userinfo = userdata[user]
+    const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'));
     let coachlist = [];
-    Object.keys(userdata).forEach((user) => {
-        if (userdata[user].role == "instructor") {
-            coachlist.push(userdata[user])
-        }
+    Object.keys(purchasedata).forEach((coach) => {
+            coachlist.push(userdata[coach])
     })
-    res.render('newpurchase', { coachlist });
+    if (user){
+        res.render('newpurchase', { user, coachlist, userinfo });
+    } else {
+        res.render('newpurchase', { user, coachlist, userinfo });
+    }
 })
 
 router.get('/f2fpurchase', (req, res) => {
@@ -117,6 +122,12 @@ router.get('/studentMeetings', (req, res) => {
     res.render('s_displayMeeting', { meetings });
 })
 
+router.get('/wallet',(req,res)=>{
+    const user = req.session.current_user;
+    const userdata = JSON.parse(fs.readFileSync('users.json'))
+    const money = userdata[user].wallet;
+    res.render('wallet', {user, money})
+})
 
 module.exports = router;
 

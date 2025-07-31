@@ -51,16 +51,18 @@ function loadNavbar() {
 document.addEventListener('DOMContentLoaded', loadNavbar);
 
 function logout() {
-    window.location.href = "/html/login.html";
     if (sessionStorage.getItem('login-status') == 'true') {
         sessionStorage.setItem('login-status', "false");
         sessionStorage.removeItem('current-user');
         sessionStorage.removeItem('username');
         sessionStorage.removeItem('role')
-        fetch('/logout').then(res=>res.json()).then((data)=>{
+        fetch('/auth/logout').then(res=>res.json()).then((data)=>{
             if(data.success){
+                window.location.href = "/html/login.html";
                 alert(data.message)
             }
         }).catch((e)=>console.error(e))
+    } else {
+        window.location.href="/html/login.html"
     }
 };
