@@ -3,4 +3,4 @@ steps:
     args: ['app','deploy','--quiet']
 
 options:
-  - CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
