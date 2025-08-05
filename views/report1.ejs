@@ -95,12 +95,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div id="msg1" style="display:none" aria-hidden="true"><%=purchase.stage["1"].message %></div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div id="msgbox1" class="content-container">
-                        </div>
-                    </div>
-                </div>
+                <div id="msgbox1" class="content-container"></div>
             </div>
             <script>
                 const encodedHtml1 = $("#msg1").html();
@@ -169,12 +164,7 @@
                     </div> -->
                 <div class="col-md-6 col-sm-12">
                     <div id="msg2" style="display:none" aria-hidden="true"><%=purchase.stage["2"].message %></div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <div id="msgbox2" class="content-container">
-                            </div>
-                        </div>
-                    </div>
+                    <div id="msgbox2" class="content-container"></div>
                 </div>
                 <script>
                     const encodedHtml2 = $("#msg2").html();
@@ -220,21 +210,10 @@
                     <% } else { %>
                         <div class="fullwidth-container">
                             <div class="row">
-                                <!-- <div class="col-md-6 col-sm-12">
-                                    <div class="content-container">
-                                        <%= purchase.stage["3"].message %>
-                                    </div>
-                                </div> -->
-
                                 <div class="col-md-6 col-sm-12">
-                                <div id="msg3" style="display:none" aria-hidden="true"><%=purchase.stage["3"].message %></div>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <div id="msgbox3" class="content-container">
-                                        </div>
-                                    </div>
+                                    <div id="msg3" style="display:none" aria-hidden="true"><%=purchase.stage["3"].message %></div>
+                                    <div id="msgbox3" class="content-container"></div>
                                 </div>
-                    </div>
                     <script>
                         const encodedHtml3 = $("#msg3").html();
                         const decodedHtml3 = decodeHtml(encodedHtml3);
@@ -248,6 +227,7 @@
                                 </div>
                             </div>
                             <% } %>
+                    </div>
 
                                 <input id="label1" style="display:none" value="<%= purchase.stage["1"].data[1] %>">
                                 <input id="label2" style="display:none" value="<%= purchase.stage["2"].data[1] %>">
@@ -273,7 +253,7 @@
 
                 const hexadata1 = $('#data1').val();
                 var data_array1 = hexadata1.split(',').map(function (item) {
-                    return parseInt(item, 10)
+                    return parseFloat(item, 10)
                 });
 
             
@@ -305,7 +285,7 @@
                 if ($('#data2').val()) {
                     const hexadata2 = $('#data2').val();
                     var data_array2 = hexadata2.split(',').map(function (item) {
-                        return parseInt(item, 10)
+                        return parseFloat(item, 10)
                     });
 
                     const ctx2 = document.getElementById('myRadarChart2').getContext('2d');
@@ -337,7 +317,7 @@
 
                     const hexadata3 = $('#data3').val();
                     var data_array3 = hexadata3.split(',').map(function (item) {
-                        return parseInt(item, 10)
+                        return parseFloat(item, 10)
                     });
 
                     const ctx3 = document.getElementById('myRadarChart3').getContext('2d');
