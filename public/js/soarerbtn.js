@@ -10,9 +10,5 @@ outerCircle.addEventListener('mouseout', () => {
 });
 
 function gotochat(id){
-    if (id=="homebtn"){
-        window.location.href = "/home#phoneFrame"
-    } else {
-        $('#popup_chat').toggle()
-    }
+    $('#popup_chat').toggle()
 }
