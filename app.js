@@ -75,7 +75,7 @@ function getServerIp() {
 //     app.locals.authClient = auth;
 // }
 
-const PORT = 5100;
+const PORT = 8080;
 app.listen(PORT, () => {
     const serverIp = getServerIp();
     console.log(`Server is running on http://localhost:${PORT}`);
