@@ -1,6 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy','--quiet']
+    args:
+      - 'app'
+      - 'deploy'
+      - '--quiet'
 
 options:
   - CLOUD_LOGGING_ONLY
