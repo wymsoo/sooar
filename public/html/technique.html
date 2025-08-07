@@ -168,7 +168,7 @@
     <div class="content-container">
         <div>
             <h3> 技術報告 <s>$800 </s> $650（試業期間優惠到31/8/2025）</h3>
-            <div>購買SOOAR技術報告包括：</div>
+            <div>導師會要求你傳送一場你想<b>分析自己</b>的比賽影片。購買SOOAR技術報告包括：</div>
             <div class="sep-bar-10"></div>
             <div>1）整體評價</div>
             <div>2）技術分析</div>
@@ -237,7 +237,7 @@
             <div>2）技術分析</div>
             <div>3）訓練計畫建議</div>
             <div>4）影片旁述</div>
-            <div>5）網上面談</div>
+            <div>5）現場教學</div>
         </div>
 
         <br>
@@ -310,13 +310,41 @@
             style="background-color:rgb(196, 196, 196); width: 90px; border-radius: 5px;">回到置頂</button>
     </div>
 
+    <button type="button" id="purchasebtn" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#purchaseModal" style="display:none"></button>
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">SOOAR很高興為您服務！</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        請點擊<a href="https://docs.google.com/forms/d/e/1FAIpQLScdftt73fIwoPxuNs-FES7wRvg_fvWVkvaQC92KGrWC6fc6HA/viewform?usp=header">此連結</a>，購買技術報告。購買後，SOOAR會在一天內向您確認訂單，並開始研究您的比賽影片。您會在3-5天內收到報告，敬請耐心等候喔！
+                    </div>
+                    <div class="main-container">
+                        <div>
+                            <img src="/images/soarer_cheer.jpg" style="height:200px; width:auto; max-width: 200px">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close" type="button" class="mybtn-grid" data-bs-dismiss="modal"
+                            style="background-color: #D1B000; color: white">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
 
     <script>
         function gotopurchase() {
-            window.location.href = "/students/newpurchase"
+            $('#purchasebtn').click();
+            // window.location.href = "/students/newpurchase"
         }
 
         function gotoprice() {
