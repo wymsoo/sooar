@@ -1,5 +1,6 @@
 function sendmessage() {
       const question = $('#msgSoarer').val();
+      $('#msgSoarer').prop('disabled',true);
       const data = { question };
       console.log(data);
       if (!question) {
@@ -29,6 +30,7 @@ function sendmessage() {
           allmsg.children().last().remove();
           allmsg[0].insertAdjacentHTML('beforeend',
             `<div class="chatbox-message soarer">${data.msg}</div>`);
+          $('#msgSoarer').prop('disabled',false);
         }
       }).catch((e) => console.error(e))
 
