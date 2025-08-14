@@ -23,7 +23,7 @@ router.post('/create-checkout-session', async (req, res) => {
     }],
     mode: 'payment',
     ui_mode: 'embedded',
-    return_url: `http://localhost:8080/checkout/checkoutReturn?session_id={CHECKOUT_SESSION_ID}&amount=${String(prod.price)}&id=${prod.id}&type=${prod.type}&purchaseid=${purchaseid}`
+    return_url: `/checkout/checkoutReturn?session_id={CHECKOUT_SESSION_ID}&amount=${String(prod.price)}&id=${prod.id}&type=${prod.type}&purchaseid=${purchaseid}`
     //redirect_on_completion: 'never'
 
   });
