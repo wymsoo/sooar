@@ -55,7 +55,7 @@ async function sendMail(req, res) {
   const student = req.session.current_user;
   const purchaseid = req.body.purchaseid;
   const userdata = JSON.parse(fs.readFileSync('users.json'));
-  let instructor;
+  let instructor = "minniesoo";
 
   userdata[student].purchased.forEach((purchase)=>{
     if (purchase.id == purchaseid){

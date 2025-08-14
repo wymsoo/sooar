@@ -6,6 +6,7 @@ const stripe = require('stripe')('sk_test_51RlO80Pw6VRYu2WWyHSeWbIJN5gbRpQosjeyr
 
 router.post('/create-checkout-session', async (req, res) => {
   const prod_id = req.body.productid;
+  console.log(prod_id)
   const purchaseid = req.body.purchaseid;
   const productdata = JSON.parse(fs.readFileSync('catalog.json'));
   const prod = productdata[prod_id];
@@ -22,7 +23,7 @@ router.post('/create-checkout-session', async (req, res) => {
     }],
     mode: 'payment',
     ui_mode: 'embedded',
-    return_url: `http://localhost:5100/checkoutReturn?session_id={CHECKOUT_SESSION_ID}&amount=${String(prod.price)}&id=${prod.id}&type=${prod.type}&purchaseid=${purchaseid}`
+    return_url: `http://localhost:8080/checkout/checkoutReturn?session_id={CHECKOUT_SESSION_ID}&amount=${String(prod.price)}&id=${prod.id}&type=${prod.type}&purchaseid=${purchaseid}`
     //redirect_on_completion: 'never'
 
   });
@@ -32,13 +33,17 @@ router.post('/create-checkout-session', async (req, res) => {
 
 router.get('/session_status', async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-
   res.json({
     status: session.status,
     payment_status: session.payment_status,
     customer_email: session.customer_details.email
   });
 });
+
+router.get('/checkoutReturn', (req,res)=>{
+  const user = req.session.current_user;
+  res.render('checkoutReturn',{user})
+})
 
 module.exports = router;
 

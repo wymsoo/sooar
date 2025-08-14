@@ -1,8 +1,10 @@
 // Fetch Checkout Session and retrieve the client secret
-async function initCheckout(stripe,id=null) {
+async function initCheckout(stripe,id=null,productname=null) {
     
     const fetchClientSecret = async () => {
-        const productid = $('#productname').val()
+
+        productid = $('#productname').val()
+        
         const data = {
             "productid": productid,
             "purchaseid": id
