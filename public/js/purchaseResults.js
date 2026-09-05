@@ -14,6 +14,8 @@ async function loadPurchaseResults() {
         msg = `<br> Please patiently wait for your report. The completion of your report takes 3-5 days. You will receive an email upon completion of the report. You can view your reports via <a href='/students/'> this link </a>.`
     } else if (type == 'meeting') {
         msg = `<br> To book a session with the instructor, please go to <a href='/students/f2fbooking'> this link </a>.`
+    } else {
+        msg = `<br> You have successfully recharged your SOOAR Wallet. See your new wallet amount via <a href='/students/wallet'> this link </a>.`
     }
 
 
@@ -30,7 +32,11 @@ async function loadPurchaseResults() {
             Paid Amount: ${price} <br>
             Customer Email: ${data.customer_email}${msg}
         `);
-
+        // const res = fetch(`/changePaymentStatus?purchaseid=${id}`)
+        // const status = res.json();
+        // if (status.success) {
+        //     alert("Successfully Purchased.")
+        // }
     }
 
     const emaildata = {

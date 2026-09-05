@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const os = require('os');
 const fs = require('fs');
 const session = require('express-session');
 const mySession = session({
-    secret: "secretkey",
+    secret: process.env.SESSION_SECRET || "development-only-change-me",
     resave: false,
     saveUninitialized: false,
     rolling: true,
@@ -27,6 +29,17 @@ app.use(mySession);
 app.use(express.json());
 app.use(express.static('public'));
 app.set("view engine", "ejs")
+app.use((req, res, next) => {
+    res.locals.stripePublishableKey = process.env.STRIPE_PUBLISHABLE_KEY || '';
+    next();
+});
+
+app.get('/runtime-config.js', (req, res) => {
+    res.type('application/javascript').send(`window.SOOAR_CONFIG = ${JSON.stringify({
+        googleClientId: process.env.GOOGLE_CLIENT_ID || '',
+        googleApiKey: process.env.GOOGLE_API_KEY || ''
+    })};`);
+});
 
 const authRoutes = require('./routes/auth');
 const studentRoutes = require('./routes/student');
@@ -35,7 +48,8 @@ const displayRoutes = require('./routes/commonDisplay');
 const purchaseRoutes = require('./routes/purchase');
 const deepseekRoutes = require('./routes/deepseek');
 const mailRoutes = require('./routes/mail')
-const checkoutRoutes = require('./routes/checkout')
+const checkoutRoutes = require('./routes/checkout');
+
 
 app.use('/auth', authRoutes);
 app.use('/students', studentRoutes);
@@ -75,7 +89,7 @@ function getServerIp() {
 //     app.locals.authClient = auth;
 // }
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     const serverIp = getServerIp();
     console.log(`Server is running on http://localhost:${PORT}`);

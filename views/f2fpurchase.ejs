@@ -303,7 +303,7 @@
         }
         // end of login function
 
-        const stripe = Stripe('pk_test_51RlO80Pw6VRYu2WWJGmuAUIhG3IOPvBvj4BJQExdVcwUuyDbkYyucHukg5mUq3qFnHeqT86rkA5kVr8TBWy9OSBh00tdKAff4o');
+        const stripe = Stripe('<%= stripePublishableKey %>');
 
         // append a new purchase object to purchase array
         async function initOrder(e) {
@@ -325,6 +325,7 @@
 
             const purchase = $('#productname').val();
             const instructor = $('#selectedCoach').val();
+            console.log(instructor)
             const data = { purchase, instructor };
 
             try {

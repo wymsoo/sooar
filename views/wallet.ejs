@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://js.stripe.com/basil/stripe.js"></script>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +25,15 @@
         #walletSoarer {
             max-width: 100%;
         }
-        @media (max-width:750px){
+
+        @media (max-width:750px) {
             #walletSoarer {
                 display: none;
             }
         }
     </style>
 </head>
+
 <body>
     <div id="newnav"></div>
 
@@ -40,26 +43,104 @@
 
     <div class="content-container">
         <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-            <img id="walletSoarer" src="/images/soarer_cheer.jpg">
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-            <div class="fullwidth-container">
-                <h2> 你的錢包尚餘：</h2>
-                <h3> $<%= money %></h3>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <img id="walletSoarer" src="/images/soarer_cheer.jpg">
             </div>
-        </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="fullwidth-container">
+                    <h2> 你的錢包尚餘：</h2>
+                    <h3> $<%= money %>
+                    </h3>
+                    <button id="rechargeFormBtn" class="mybtn-grid" style="width: 30%">增值</button>
+                    <div class="sep-bar-10"></div>
+                    <div id="rechargeForm" style="display: none">
+                        <div class="sep-line"></div>
+                        <div class="sep-bar-10"></div>
+                        <h4> 增值表格</h4>
+                        <div class="content-container">
+                            <form>
+                                <label for="userid"> 1.用戶ID</label><br>
+                                <input id="userid" name="userid" value="<%= user %>" disabled>
+                                <div class="sep-bar-10"></div>
+
+                                <div> 2.增值金額</div>
+                                <select id="productname" class="form-select" aria-label="amount" name="amount">
+                                    <option value="1500-HKD">$1500 = 1600 SOR</option>
+                                    <option value="3500-HKD">$3500 = 4000 SOR</option>
+                                    <option value="6000-HKD">$6000 = 8000 SOR </option>
+                                </select>
+
+                                <div class="sep-bar-10"></div>
+                                <div> 3. 付款方式</div>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="web">網上支付 (Visa, Master, EPS)</option>
+                                </select>
+
+                                <div class="sep-bar-10"></div>
+                                <button id="rechargebtn" type="button" class="mybtn-grid" style="width:30%" onclick="recharge()">付款</button>
+                                <div id="checkout"></div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <div id="footerHTML"></div>
 
+    <script>
+        $('#rechargeFormBtn').on('click',()=>{
+            $('#rechargeForm').toggle()
+        })
+
+        const stripe = Stripe('<%= stripePublishableKey %>');
+
+
+        async function recharge(){
+            const id = $('#productname').val()
+            const split = id.split('-');
+            const discount = {
+                "1500" : 1600,
+                "3500" : 4000,
+                "6000" : 8000,
+            }
+            const amount = { "amount" : discount[split[0]], "purchaseid": id }
+
+            const res = await fetch('/purchase/chargeWallet',{
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(amount)
+            });
+
+            const data = await res.json();
+
+            try {
+                if (data.success) {
+                    console.log(data.msg)
+                    $('#rechargebtn').hide()
+                    const purchaseResult = await initCheckout(stripe);
+                } else {
+                    alert("purchase fail")
+                }
+            } catch (error){
+                console.log(error)
+            }     
+        }
+    </script>
+
 
     <script src="../js/footer.js"></script>
+    <script src="../js/stripecheckout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <script src="../js/new_navbar.js"></script>
 </body>
+
 </html>

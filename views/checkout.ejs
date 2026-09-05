@@ -25,7 +25,7 @@
 
     <script>
         // Initialize Stripe.js
-        const stripe = Stripe('pk_test_51RlO80Pw6VRYu2WWJGmuAUIhG3IOPvBvj4BJQExdVcwUuyDbkYyucHukg5mUq3qFnHeqT86rkA5kVr8TBWy9OSBh00tdKAff4o');
+        const stripe = Stripe('<%= stripePublishableKey %>');
 
 
         // Fetch Checkout Session and retrieve the client secret

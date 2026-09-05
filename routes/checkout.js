@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs');
 const path = require('path')
-const stripe = require('stripe')('sk_test_51RlO80Pw6VRYu2WWyHSeWbIJN5gbRpQosjeyrWnc4HUJIGeCFTdl60a1CZ75eVkK6ICZqraCstWf93jicybMNUZQ00ZB41PIiT');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 router.post('/create-checkout-session', async (req, res) => {
   const prod_id = req.body.productid;

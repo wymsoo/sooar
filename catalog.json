@@ -22,7 +22,7 @@
     },
     "CV01" : {
         "id": "CV01",
-        "name": "旁述影片",
+        "name": "比賽影片旁述",
         "type": "report",
         "price": 39900,
         "currency": "hkd"
@@ -32,6 +32,28 @@
         "name": "技術報告階段",
         "type": "report",
         "price": 29900,
+        "currency": "hkd"
+    },
+
+    "3500-HKD" : {
+        "id": "3500-HKD",
+        "name": "SOOAR Wallet Recharge - 3500HKD",
+        "type": "recharge",
+        "price": "350000",
+        "currency": "hkd"
+    },
+    "1500-HKD" : {
+        "id": "1500-HKD",
+        "name": "SOOAR Wallet Recharge - 1500HKD",
+        "type": "recharge",
+        "price": "150000",
+        "currency": "hkd"
+    },
+    "6000-HKD" : {
+        "id": "6000-HKD",
+        "name": "SOOAR Wallet Recharge - 6000HKD",
+        "type": "recharge",
+        "price": "600000",
         "currency": "hkd"
     }
     

@@ -1,6 +1,14 @@
 .vscode
 bootstrap-5.3.3-dist/
 .env
+*.env
+*.env.*
+!.env.example
+*_credentials.json
+credentials.json
+token.json
+*.pem
+test_oldfiles/
 /uploads/*
 .DS_Store
 

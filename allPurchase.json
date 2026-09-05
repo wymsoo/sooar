@@ -1,8 +1,395 @@
 {
   "minniesoo": {
-    "orders": {},
-  },
-  "hp123": {
-    "orders": {}
+    "orders": {
+      "2640": {
+        "user": "wongkinlok",
+        "info": {
+          "id": 2640,
+          "plan": "U001",
+          "date": "24-8-2025",
+          "stage": {
+            "1": {
+              "status": "pending",
+              "message": "( please view pdf doc)",
+              "data": [
+                [
+                  "4",
+                  "2",
+                  "3",
+                  "2",
+                  "2.5",
+                  "3.5"
+                ],
+                [
+                  "進攻力",
+                  "防禦力",
+                  "膽量",
+                  "落點意識",
+                  "搶攻意識",
+                  "相持能力"
+                ]
+              ]
+            },
+            "2": {
+              "status": "pending",
+              "message": "( please view pdf doc)",
+              "data": [
+                [
+                  "3.5",
+                  "3",
+                  "3.5",
+                  "2",
+                  "3.5",
+                  "3"
+                ],
+                [
+                  "正手上旋",
+                  "反手上旋",
+                  "正手下旋",
+                  "反手下旋",
+                  "發球",
+                  "接發球"
+                ]
+              ]
+            },
+            "3": {
+              "status": "pending",
+              "message": "( please view pdf doc)",
+              "data": [
+                [
+                  "3.5",
+                  "4",
+                  "4",
+                  "3",
+                  "3",
+                  "4"
+                ],
+                [
+                  "步法",
+                  "擺速",
+                  "前三板戰術(發球)",
+                  "前三板(接發球)",
+                  "體能",
+                  "進攻意識"
+                ]
+              ]
+            }
+          },
+          "zoom": "locked",
+          "ordered_date": "2025-08-24T13:02:25.527Z",
+          "video": {
+            "status": "pending",
+            "path": [
+              "wongkinlok-2640-fullmatch.mov"
+            ]
+          },
+          "studentQuestion": "/",
+          "instructor": "minniesoo",
+          "complete": true,
+          "payment": "pending"
+        }
+      },
+      "2740": {
+        "user": "willis",
+        "info": {
+          "id": 2740,
+          "plan": "U001",
+          "date": "24-8-2025",
+          "stage": {
+            "1": {
+              "status": "pending",
+              "message": "<div>你整體的發揮不錯，一開始入局比較慢，但慢慢越打越好，球的速度和質量都漸入佳境，所以這一場是一場有價值的比賽。你的優勢在反手位，反手手腕頂拉和摩擦的感覺都不錯，所以大膽出手時，威脅相當大。正手相對來說出手速度較平均，缺乏突然性。這個問題有兩個原因，首先是你的擺速不夠快，所以在相持當中總是不夠時間讓你去主動提速。第二個問題是你還未掌握到提速的方法。主流提速方法有三種，大臂提速，前臂提速，和手腕提速。在【技術分析】部份，我會仔細講解這些提速方式。</div><div><br></div><div>對手擰起的球，你覺得很飄，很難銜接。你這個感覺，其實就算職業選手也會有同感，對於對手擰起的球不好受。這正是對手擰起的原因 – 他想在你發球這輪取得主動。這一球不完全是你可以10成力進攻的機會。要解決這一板，你可以發完球，還原快一些，站穩後以7成防守3成進攻的心態準備。若果球快，你就借力輕輕帶一帶，以輕、準、快為準則，而不是依靠力度。若果覺得對方擰得慢，你就用同樣的動作，用前臂稍微提速，加快向前的動作。這樣的球已經帶有少少威脅，能夠破壞對手的接發搶。</div><div><br></div><div>至於你認為自己太依賴反手，我不這麼認為，原因是你的反手具威脅性，所以值得依賴。現在用反手作為進攻得分手段越來越主流，因為打法的趨勢速度越來越快，很難只依靠正手得分。所以多用反手不是問題。問題是你要提升自己的正手讓自己的正手跟上反手的速度。現在你的正手擊球時間比反手慢所以你的正手要多加訓練成為一個更全面的球員。</div><div><br></div>",
+              "data": [
+                [
+                  "3.5",
+                  "3",
+                  "3",
+                  "3.5",
+                  "3.5",
+                  "3.5"
+                ],
+                [
+                  "進攻力",
+                  "防禦力",
+                  "膽量",
+                  "落點意識",
+                  "搶攻意識",
+                  "相持能力"
+                ]
+              ]
+            },
+            "2": {
+              "status": "pending",
+              "message": "<div>）技術分析</div><div><br></div><div>1）正手上旋</div><div><br></div><div>你的擊球點相當準，這是很好的開始，證明你能掌握來球的節奏</div><div>但你的出手沒有突然性，原因是，你的動作由後向前推，沒有 “畫圓” 的感覺</div><div>你若果由後向前推，出球就會很直，沒有拋物線</div><div>我認為你可以多加收前臂的動作</div><div>最完整的正手是轉腰帶動大臂，大臂帶動前臂，前臂帶動手腕，手腕用來掌握板型和摩擦</div><div>這樣說可能很抽象，但你先感受加快收前臂的感覺，至於轉腰發力的感覺，可以通過訓練擺速來取得</div><div>反手轉正手你總是“擋球”，不是拉球，除了上述原因，還因為擺速不夠快，導致缺乏身體帶動手的協調發力</div><div>如何訓練會在【建議訓練計畫】詳談</div><div><br></div>",
+              "data": [
+                [
+                  "2",
+                  "4",
+                  "3",
+                  "3.5",
+                  "3",
+                  "3"
+                ],
+                [
+                  "正手上旋",
+                  "反手上旋",
+                  "正手下旋",
+                  "反手下旋",
+                  "發球",
+                  "接發球"
+                ]
+              ]
+            },
+            "3": {
+              "status": "pending",
+              "message": "<div><br></div><div>2）多球：左推右攻（擺速）</div><div>經典的基本功計畫，一定要多練</div><div>練定點，一個反手一個正手。這能加強你反手正手轉換的流暢性，掌握正反手一致的擊球時間</div><div>正手要拉斜線，注意手臂和“畫圓”感覺</div><div>多球要派得快到自己覺得有一點跟不上，然後嘗試跟上，才有效</div><div><br></div><div>3）擰起銜接</div><div>讓對方發到你的反手半台短，你擰起後對方擋你反手半台，馬上還原，儘量搶快點撕</div><div><br></div><div>4）下旋拉起銜接</div><div>自己發正手短或反手短，對方搓你反手長，你反手拉斜線，對方防你全台，這一板你盡可能連續進攻</div><div>自己發正手短或反手短，對方搓你反手長，你反手拉直線，對方防你全台，這一板你盡可能連續進攻</div><div><br></div><div>5） 發球 – 轉/無轉</div><div>根據上述技巧，摸索合適自己的發球方法和特色</div><div>發轉/無轉時，根據上述技巧，儘量同化動作，加強隱蔽性</div>",
+              "data": [
+                [
+                  "3",
+                  "4",
+                  "4",
+                  "2",
+                  "3"
+                ],
+                [
+                  "步法",
+                  "想持能力",
+                  "前三板戰術",
+                  "體能",
+                  "心態"
+                ]
+              ]
+            }
+          },
+          "zoom": "locked",
+          "ordered_date": "2025-08-24T12:47:22.238Z",
+          "video": {
+            "status": "pending",
+            "path": [
+              "willis-2740-fullmatch.mp4"
+            ]
+          },
+          "studentQuestion": "正手拉波好唔實，同埋好似冇突然性咁\r\n開波點樣開快啲？一二跳之間好似跳好耐\r\n開勾手、轉不轉後俾人擰起，個波好飄好難受，可以點樣處理？\r\n而家好似太依賴反手，中間偏正手都會用反手，長遠嚟講係咪應該改？",
+          "instructor": "minniesoo",
+          "complete": true,
+          "payment": "pending"
+        }
+      },
+      "4460": {
+        "user": "ponglikhang_fake",
+        "info": {
+          "id": 4460,
+          "plan": "U001",
+          "date": "15-8-2025",
+          "stage": {
+            "1": {
+              "status": "pending",
+              "message": "<div>我認為力行是一名天賦相當高的球手，在比賽當中看見他的發搶套路很清晰，而且擁有比賽的臨場應變能力。在場上不斷有跳動去調動自己的狀態是很好的習慣，在場上投入和興奮的表現都是一個出色運動員的特徵。</div><div><br></div><div>這場比賽雖然輸了，但在我的角度不下風，致命傷在於他的接發球的能力。心態上亦沒有什麼大問題，一直保持住正向的心態。見到他失誤時敢於作出變化，是一種天賦，所以要堅持。當中有曾經出現過「倒米」的情況，這是因為自己連續兩個失誤，自己慌張了，霎時間失去了信心。這在職業的選手也很常見，所以需要尋找一種方式，讓自己盡快重新調整過來。</div><div>他的優點是步法很快，人的速度和力量都不俗，但是因為年紀較少，而且基本功依然不夠紮實，所以在比賽當中出現較多的無遺失誤。這都不是大問題，只要有正確的訓練方式，力行有相當大的潛力。</div><div><br></div><div>至於提及到決勝局手軟的問題，與其說是心態問題，我認為這場比賽是偏向能力問題，有時候一些不足，會在關鍵時刻更明顯。這場比賽，我們回憶一下：</div><div>3:4 -&gt; 3:5 正手接發球搓失（技術性問題）</div><div>4:5 -&gt;&nbsp; 4:6 發下蹲搶攻失誤（無謂失誤/不夠紮實）</div><div>4:6 -&gt; 4:7&nbsp; 被擦死網（運氣）</div><div>4:7 -&gt; 4:8 相持失誤（擺速不夠快）</div><div><br></div><div>已經將比分拉開了。決勝局較緊張很正常，發揮會打折扣，但我沒有明顯看到力行很手緊的問題。這是好事，因為有些球員的心理關口其實很難解決的，甚至一輩子都解決不了。不過在自己不夠自信的時候可以怎麼辦？兜個圈，跳一跳，每一球都和自己說，這是整場比賽的第一球，一分一分打。每一球都提自己“追著球打”，出手要用力，就可以防止因緊張/猶疑而發軟的情況。贏的時候吶喊一下，嚇一嚇對手，也振奮一下自己。</div><div><br></div>",
+              "data": [
+                [
+                  "4",
+                  "2.5",
+                  "3.5",
+                  "3",
+                  "4",
+                  "3.5"
+                ],
+                [
+                  "進攻力",
+                  "防禦力",
+                  "膽量",
+                  "落點意識",
+                  "搶攻意識",
+                  "相持能力"
+                ]
+              ]
+            },
+            "2": {
+              "status": "pending",
+              "message": "<div>我先說說力行的優點：</div><div>1）<span style=\"white-space:pre\">\t</span>主要進攻套路 -- 發勾手急球配合對手的右 半台的短球，發短球後側身搶攻，發長球後快拉/快推，形成主動性想持</div><div>-<span style=\"white-space:pre\">\t</span>步法非常快，是很好的優勢，除了要保持，更要多練，放大自己的優勢</div><div>-<span style=\"white-space:pre\">\t</span>許多球員都會較執著於技術動作，但在我的角度，我敢於說步法是乒乓球所有技術當中最重要的能力，只要你步法夠快，就能在高速移動當中，依然找到合適的發力點。所以，我想再強調，步法是你的優勢，要多練，我會在【訓練計畫建議】提出一些練步法的計畫</div><div>力行可以改善的地方：</div><div>2）<span style=\"white-space:pre\">\t</span>接發球 – 正手短</div><div>-<span style=\"white-space:pre\">\t</span>這場比賽，力行的接發球有許多的直接失誤，或者接出機會球給對手進攻</div><div>-<span style=\"white-space:pre\">\t</span>力行通常用搓落點的方式去破解（在比賽當中，他一開始搓反手被側身衝，然後他嘗試搓正手，對方吊起，但自己防失誤，然後他又嘗試再搓反手。我先讚賞這種場上變化），但是不見效</div><div>-<span style=\"white-space:pre\">\t</span>搓球：面對這種側旋，需要步法上得夠，意思是人要夠“入台”，減低身體於球的距離。當對手的側旋偏下旋，板型可以“亮”一點（板面較向上），用球拍的偏下部，由你的右至左摩擦；如果對手的側旋偏上旋，板面則“立”一點，多一點撞擊去“撇”球。</div><div>o<span style=\"white-space:pre\">\t</span>但搓球是一個“控制”的技術，主動性較低，所以對落點要求高，練的時候要接到兩大角</div><div>-<span style=\"white-space:pre\">\t</span>除了搓球，在這場比賽的尾二那球，力行嘗試了正手挑，贏了</div><div>o<span style=\"white-space:pre\">\t</span>自己訓練是嘗試回憶這個感覺，帶著這個挑球的感覺去練。若果自己有挑球的技術，那會比搓球更為優勝</div><div>3）<span style=\"white-space:pre\">\t</span>接發球 – 反手/正手長台</div><div>-<span style=\"white-space:pre\">\t</span>現在的打法趨勢，越來越多人喜歡“偷長”，所以練好這個接發球很重要</div><div>-<span style=\"white-space:pre\">\t</span>力行比賽當中無謂失誤較多，但我認為不是技巧問題，是能力問題，即是技術上問題不大，但練得不夠</div><div>-<span style=\"white-space:pre\">\t</span>這個球應該採取快拉（起跳點就出手），因為讓位的時間不夠，發力空間較細，要利用多點前臂和手腕的出手速度</div><div>-<span style=\"white-space:pre\">\t</span>比賽當中，力行嘗試放慢節奏吊一板，減低無謂失誤</div><div>o<span style=\"white-space:pre\">\t</span>這是不錯的場上應變，值得讚賞，但長遠的發展，我會更強調練準快拉，而不是尋找減低失誤的方法</div><div>-<span style=\"white-space:pre\">\t</span>這個技術讓教練發兩面長台，多練，自然就會準了，擊球時間沒有問題，不要改動作或擊球時間</div><div>4）<span style=\"white-space:pre\">\t</span>相持</div><div>-<span style=\"white-space:pre\">\t</span>擺速不俗，但我相信力行有能力可以練得更快</div><div>-<span style=\"white-space:pre\">\t</span>相持在這場比賽和對手不相伯仲，但對手比較高大，力量稍微優勝少少</div><div>-<span style=\"white-space:pre\">\t</span>失誤的原因通常是因為人不夠快，慢那麼0.01秒，被球頂著了一點點，力度就不集中，就會失誤了</div><div>-<span style=\"white-space:pre\">\t</span>要在加快擺速能力，就可以和比自己高大的選手抗衡了</div><div><br></div>",
+              "data": [
+                [
+                  "3.5",
+                  "3",
+                  "4.5",
+                  "3.5",
+                  "2",
+                  "3"
+                ],
+                [
+                  "正手上旋",
+                  "反手上旋",
+                  "發搶(正手搶)",
+                  "發搶(反手搶)",
+                  "接發球",
+                  "擺速"
+                ]
+              ]
+            },
+            "3": {
+              "status": "pending",
+              "message": "以下是我建議力行訓練的計畫：<div><div>1）<span style=\"white-space:pre\">\t</span>多球：推擋側身撲正手</div><div>-<span style=\"white-space:pre\">\t</span>這是一個經典且有用的步法計畫；除了練步法，這個計畫順帶練到反手正手轉換的協調性，我認為對力行很合適</div><div>-<span style=\"white-space:pre\">\t</span>這個計畫的重點是，撲正手一點要派得夠大，真的是“撲正手”，不是用拼步的“拼正手”</div><div>-<span style=\"white-space:pre\">\t</span>累的時候一定要堅持，越累，就越能練到步法和移動當中的協調發力</div><div>-<span style=\"white-space:pre\">\t</span>進階板：側身下旋衝，撲正手，回反手</div><div>2）<span style=\"white-space:pre\">\t</span>多球：擺速</div><div>-<span style=\"white-space:pre\">\t</span>經典的基本功計畫，一定要多練，最好每天都練</div><div>-<span style=\"white-space:pre\">\t</span>不要“借力”，借力是偷懶，要每球都嘗試“用力落個波度”，這樣的效果才好</div><div>3）<span style=\"white-space:pre\">\t</span>接發球 – 接長球</div><div>-<span style=\"white-space:pre\">\t</span>教練發側旋全台長台，練快拉，不需要銜接，大膽拉出去</div><div>-<span style=\"white-space:pre\">\t</span>主要向前頂的力度，出手要快</div><div>-<span style=\"white-space:pre\">\t</span>特別是正手長台，向前發力的感覺要多一點。因為我留意到你比賽的側身比正手好，你側身時，左腳已經在前面，容易由後向前發力，但正手位，自然的站姿會有更大的局限性，所要要靠自己摸索向前撲著球拉的感覺</div><div>4）<span style=\"white-space:pre\">\t</span>接發球 – 側旋正手短</div><div>-<span style=\"white-space:pre\">\t</span>人要上得夠，搓/撇落點，留意上面【技術分析】提及的技巧</div><div>-<span style=\"white-space:pre\">\t</span>練正手挑/ 反手擰，看看哪個較適合自己</div><div><br></div><div>以上提及的訓練計畫只是我額外認為對力行會很有用，不代表力行不用練平時每日訓練的基本功喔（包括連續拉和發搶等）！最後，可以在網上多看看力行喜歡的世界級球員，若果問我，我會推薦日本Sora Matsushima ，雖然他是左手，但他的節奏我認為力行能夠模仿和學習。</div><div>以下是Harimoto Tomokazu和Sora Matsushima的比賽，可以參考：</div><div>https://www.youtube.com/watch?v=3VxvUGUk9Yg</div></div><div><br></div>",
+              "data": [
+                [
+                  "4",
+                  "4",
+                  "3",
+                  "2.5",
+                  "2.5",
+                  "4"
+                ],
+                [
+                  "步法",
+                  "基本功",
+                  "前三板戰術",
+                  "防禦力",
+                  "體能",
+                  "出手狠勁"
+                ]
+              ]
+            }
+          },
+          "zoom": "locked",
+          "ordered_date": "2025-08-15T04:21:09.782Z",
+          "video": {
+            "status": "pending",
+            "path": [
+              "ponglikhang_fake-4460-set1.mov",
+              "ponglikhang_fake-4460-set2.mov",
+              "ponglikhang_fake-4460-set3.mov",
+              "ponglikhang_fake-4460-set4.mov",
+              "ponglikhang_fake-4460-set5.mov"
+            ]
+          },
+          "studentQuestion": "想知道決勝局技術應如何處理，通常在決勝局時都會手軟，另外希望知道更多比賽時的技巧。感覺在訓練裏的東西在比賽時用不着謝謝你的幫忙。",
+          "instructor": "minniesoo",
+          "complete": true,
+          "payment": "pending"
+        }
+      },
+      "5950": {
+        "user": "mc",
+        "info": {
+          "id": 5950,
+          "plan": "U001",
+          "date": "15-8-2025",
+          "stage": {
+            "1": {
+              "status": "pending",
+              "message": "--",
+              "data": "--"
+            },
+            "2": {
+              "status": "pending",
+              "message": "--",
+              "data": "--"
+            },
+            "3": {
+              "status": "pending",
+              "message": "--",
+              "data": "--"
+            }
+          },
+          "zoom": "locked",
+          "ordered_date": "2025-08-15T05:31:14.786Z",
+          "video": {
+            "status": "pending",
+            "path": [
+              "mc-5950-fullmatch.mov"
+            ]
+          },
+          "studentQuestion": "hello",
+          "instructor": "minniesoo",
+          "complete": false,
+          "payment": "pending"
+        }
+      },
+      "7660": {
+        "user": "wymsoo",
+        "info": {
+          "id": 7660,
+          "plan": "U001",
+          "date": "3-8-2025",
+          "stage": {
+            "1": {
+              "status": "pending",
+              "message": "<div><b>1）<span style=\"white-space:pre\">\t</span>整體評價</b></div><div>你在進攻威脅上有明顯潛力，上手能力相當高，而且進攻質量不錯。賽場上有進攻亦有落點變化，可以看出你在賽場上有思考和應變能力。</div><div><br></div><div>我認為你的技術長遠來說，進攻套路可以發展得相當全面，目前，你比較相信自己的正手能力，但在我的角度，不要忽略你反手進攻的潛力和威力。正手本身可讓位的空間較大，讓你可以放慢節奏拉，從而加保險，有更高的命中率。但這在長遠發展來說不一定最好，而且根據你的發力方法，我認為你的反手發力方法更為協調，單獨質量甚至可以比正手高，無奈被自己的步法限制，由於總是差少少到位，導致有無謂失誤。</div><div><br></div>",
+              "data": [
+                [
+                  "4",
+                  "3",
+                  "2.5",
+                  "3.5",
+                  "4",
+                  "2.5"
+                ],
+                [
+                  "進攻力",
+                  "防禦力",
+                  "膽量",
+                  "落點意識",
+                  "搶攻意識",
+                  "相持能力"
+                ]
+              ]
+            },
+            "2": {
+              "status": "pending",
+              "message": "<div><b>2）<span style=\"white-space:pre\">\t</span>單項技術</b></div><div><b><br></b></div><div>i)<span style=\"white-space:pre\">\t</span>接發球：正手擺短落點很開，是優勢，為自己創造了不少進攻機會，要繼續保持</div><div><br></div><div>ii)<span style=\"white-space:pre\">\t</span>上手後的銜接：接發球正手輕擺對方正手短，對方不能回短，你一般用正手加轉吊。<b>吊完的銜接有待加強</b>。我認為<b>這板銜接的出手時間有點慢</b>，<b>總是等到球的下降期才拉</b>。這樣會拉得很吃力。這一球若果能<b>掌握高點，然後從後往前撲著拉</b>，會給對手更大的壓力，而且當你拉不同落點時，對手會更難判斷你的出手</div><div><br></div><div>iii)<span style=\"white-space:pre\">\t</span>正手進攻：你的正手目測OK，但重心有一點往後仰，你要不斷提自己帶著撲球的感覺拉。重心一向後仰便會失去平衡，影響連續</div><div><br></div><div>&nbsp;iv)&nbsp; &nbsp;反手下旋：反手用力相當流暢，但有非常重要的問題：</div><div>-<span style=\"white-space:pre\">\t</span><b>對手反手逼長，自己有多次回搓</b>，或直接拉失的情況。反手不像正手，允許你有時間讓位，等球掉到下降期，所以難度會提升，所以<b>這球要練快拉，球頂著你，你要頂著球拉</b>，不能讓</div><div><br></div><div>v)<span style=\"white-space:pre\">\t</span>反手的基本功：很多人以為反手是站著練的，但其實反手的步法要求很高。步法可以用多球訓練。至於練什麼，可根據【建議訓練計畫】。</div><div><br></div><div>vi)<span style=\"white-space:pre\">\t</span>反手接發球：對手發你反手長，同樣要多練。練快拉，頂球拉。</div><div><br></div><div>vii)<span style=\"white-space:pre\">\t</span>發球：一場比賽發失4球！對賽事的影響力不需要我強調。發球前，停一停，想一想，別撿球後走到台邊想都不想，站都未站穩就發。</div><div><br></div><div><br></div>",
+              "data": [
+                [
+                  "3.5",
+                  "3",
+                  "2.5",
+                  "1",
+                  "2.5",
+                  "3.5"
+                ],
+                [
+                  "正手上旋",
+                  "反手上旋",
+                  "正手下旋",
+                  "反手下旋",
+                  "發球",
+                  "接發球"
+                ]
+              ]
+            },
+            "3": {
+              "status": "pending",
+              "message": "<div><b>建議訓練計畫：</b></div><div><br></div><div>1）<span style=\"white-space:pre\">\t</span>多球單練：正手半出台或長台，吊起連續撲著衝</div><div>重點：加強撲著拉的感覺，加強步法及進攻能力</div><div><br></div><div>2）<span style=\"white-space:pre\">\t</span>接反手長球</div><div>重點：根據自己平時接發球的站位，接反手長球時連反手快拉 （不要預先後退，很多人都會練球時有這個習慣，與比賽情況不符）</div><div><br></div><div>3）<span style=\"white-space:pre\">\t</span>多球：反手半台下旋長台快拉 （連續）</div><div>重點：教練以連續，以較快的方法派反手半台長台下旋，逼使你步法要不斷移動，而且採用反手快拉技術。</div><div><br></div><div>4）<span style=\"white-space:pre\">\t</span>正手下旋大角</div><div>重點：教練可在正手位發你的正手大角下旋。你要加快步法，好讓自己能在對手逼長時，能快速移動並踩實地下發力拉</div><div><br></div><div>其他意見：</div><div>由於對你不夠了解，不知道你反手短台接發球的發展方向，你可以嘗試練習反手檸拉，反手擺短等。但這是重要的課題，你要自己研究。</div><div><br></div>",
+              "data": [
+                [
+                  "4",
+                  "4",
+                  "2.5",
+                  "2.5",
+                  "4"
+                ],
+                [
+                  "步法",
+                  "基本功",
+                  "前三板戰術",
+                  "體能",
+                  "心態"
+                ]
+              ]
+            }
+          },
+          "zoom": "locked",
+          "ordered_date": "2025-08-03T07:50:30.948Z",
+          "video": {
+            "status": "pending",
+            "path": [
+              "wymsoo-7660-fullmatch.MOV"
+            ]
+          },
+          "studentQuestion": "hi",
+          "instructor": "minniesoo",
+          "complete": true,
+          "payment": "pending"
+        }
+      }
+    }
   }
 }

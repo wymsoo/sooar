@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 const axios = require('axios');
 // const {getSecret} = require('../controllers/secrets_mgr');
 
@@ -40,7 +42,7 @@ async function askDeepSeek(question) {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             // 'Authorization': 'Bearer ' + await getSecret("sooar-466800", "DEEPSEEK_KEY")
-            'Authorization': "Bearer sk-9be07e99e2514a719c7f4066a6f184d1"
+            'Authorization': `Bearer ${process.env.DEEPSEEK_KEY}`
         },
         data: data
     };

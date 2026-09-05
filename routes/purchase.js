@@ -115,7 +115,8 @@ router.post('/newOrder', new_id, upload.array('files'), (req, res, err) => {
                 },
                 studentQuestion : question,
                 instructor: coach,
-                complete: false
+                complete: false,
+                payment: "pending"
             }
 
 
@@ -127,18 +128,73 @@ router.post('/newOrder', new_id, upload.array('files'), (req, res, err) => {
             }
 
             purchasedata[initPurchase["instructor"]].orders[req.purchase_id] = orderinfo;
+            // setTimeout(() => {
+            //     if (purchasedata[initPurchase["instructor"]].orders[req.purchase_id].payment!='complete'){
+            //     removeItem(user_session, req.purchase_id);
+            //     }
+            // }, 60000);
 
             fs.writeFileSync('users.json', JSON.stringify(userdata, null, 2));
             fs.writeFileSync('allPurchase.json', JSON.stringify(purchasedata, null, 2));
 
 
-            res.json({ success: true, message: `File uploaded successfully: for user: ${purchase}`, purchaseid: req.purchase_id })
+            res.json({ success: true, message: `File uploaded successfully: for user: ${purchase}`, purchaseid: req.purchase_id, set: purchase })
             // res.send(`File uploaded successfully: ${file.filename} for user: ${req.body.purchase}`);
         } catch (e) {
             console.error(e)
             return res.status(500).send('An unknown error occurred.');
         }
     });
+
+
+function removeItem(user,purchaseid) {
+    const userdata = JSON.parse(fs.readFileSync('users.json'));
+    const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'))
+    let instructor;
+    userdata[user].purchased.forEach((purchase)=>{
+        if (purchase.id==purchaseid){
+            userdata[user].purchased = userdata[user].purchased.filter(purchase => purchase.id !== purchaseid);
+            instructor = purchase.instructor;
+            delete purchasedata[instructor].orders[purchaseid]
+        }
+    })
+    console.log(`Item with ID ${purchaseid} removed.`);
+}
+
+router.get('/changePaymentStatus', (req,res)=>{
+    const purchaseid = req.query.purchaseid;
+    const user = req.session.current_user;
+    const userdata = JSON.parse(fs.readFileSync('users.json'));
+    const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'))
+    let instructor;
+    userdata[user].purchased.forEach((purchase)=>{
+        if (purchase.id==purchaseid){
+            purchase.payment = "complete";
+            instructor = purchase.instructor;
+            purchasedata[instructor].orders[purchaseid].payment = "complete"
+        }
+    })
+
+    fs.writeFileSync('users.json', JSON.stringify(userdata, null, 2));
+    fs.writeFileSync('allPurchase.json', JSON.stringify(purchasedata, null, 2));
+
+
+})
+
+router.post("/chargeWallet",(req,res)=>{
+    const amount = parseInt(req.body.amount);
+    const purchaseid = req.body.purchaseid; //3500-HKD
+    console.log(amount)
+    const user = req.session.current_user;
+    const userdata = JSON.parse(fs.readFileSync('users.json'));
+    userdata[user].wallet += amount;
+    fs.writeFileSync('users.json', JSON.stringify(userdata, null, 2));
+    const newAmount = userdata[user].wallet;
+    console.log(newAmount)
+
+    res.json({success:true, msg:`Wallet successfully updated for user ${user}. Remaining value in ${user}'s SOOAR wallet it ${newAmount}`, price: amount, purchaseid})
+})
+
 
 
 
@@ -173,9 +229,29 @@ function new_filename(req, res, next) {
     next();
 }
 
+router.post('/updateWallet',(req,res)=>{
+    const setid = req.query.setid;
+    const purchaseid = req.query.purchaseid;
+    const user = req.session.current_user;
+    const userdata = JSON.parse(fs.readFileSync('users.json'));
+    const catalog = JSON.parse(fs.readFileSync('catalog.json'));
+    const price = catalog[setid].price;
+    const scaled_price = price/100
+    if (userdata[user].wallet >= scaled_price){
+        userdata[user].wallet -= scaled_price;
+        fs.writeFileSync('users.json', JSON.stringify(userdata, null, 2));
+        res.json({success: true, msg: "SOOAR Wallet Updated.", setid: setid, purchaseid: purchaseid})
+    } else {
+        res.json({success: false, msg: "Purchase failed."})
+    }
+
+})
+
+
+// purchasing by stage
 router.post('/submitOrder', (req, res) => {
     const orderid = req.query.orderid;
-    const orderStage = req.body.stage; // '2' or '旁述影片'
+    const orderStage = req.body.stage; // '2' or '比賽影片旁述'
     const userdata = JSON.parse(fs.readFileSync('users.json'));
     const purchasedata = JSON.parse(fs.readFileSync('allPurchase.json'));
     const user_session = req.session.current_user;
@@ -186,7 +262,7 @@ router.post('/submitOrder', (req, res) => {
         console.log(purchase.id, parseInt(orderid))
         if (purchase.id === parseInt(orderid)) {
             // purchase.stage = { ...purchase.stage, ...orderStage };
-            if (orderStage == "旁述影片") {
+            if (orderStage == "比賽影片旁述") {
                 purchase.video.status = "pending";
                 purchasedata[purchase.instructor].orders[orderid].info.video.status = "pending";
             } else {

@@ -124,6 +124,7 @@ router.get('/studentMeetings', (req, res) => {
 
 router.get('/wallet',(req,res)=>{
     const user = req.session.current_user;
+    console.log(user)
     const userdata = JSON.parse(fs.readFileSync('users.json'))
     const money = userdata[user].wallet;
     res.render('wallet', {user, money})

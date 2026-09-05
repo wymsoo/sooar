@@ -140,7 +140,7 @@
                         <option value="U001"> 綜合報告(#U001) $859</option>
                         <option value="UF01"> 綜合報告+面談(#UF01) $1199</option>
                         <option value="S001"> 整體評價(#S001) $299</option>
-                        <!-- <option value="CV01"> 旁述影片(#CV01) $399</option> -->
+                        <!-- <option value="CV01"> 比賽影片旁述(#CV01) $399</option> -->
                     </select>
                 </div>
 
@@ -184,7 +184,7 @@
                         <% if (user) { %>
                         <option value="wallet"> 用SOOAR錢包支付 </option>
                         <% } %>
-                        <option value="stripe"> 網上支付 </option>
+                        <option value="web"> 網上支付 </option>
                     </select>
                 </div>
                 <div class="sep-bar-10"></div>
@@ -364,7 +364,7 @@
                     if (data.success) {
                         return true
                     } else {
-                        alert(data.message);
+                        alert(data.message,": User exists. Automatically logging you in...");
                         throw new Error(data.message);
                     }
                 }
@@ -400,7 +400,7 @@
             }).catch((error) => console.error(error))
         }
         // end of login function
-        const stripe = Stripe('pk_test_51RlO80Pw6VRYu2WWJGmuAUIhG3IOPvBvj4BJQExdVcwUuyDbkYyucHukg5mUq3qFnHeqT86rkA5kVr8TBWy9OSBh00tdKAff4o');
+        const stripe = Stripe('<%= stripePublishableKey %>');
 
 
         // append a new purchase object to purchase array
